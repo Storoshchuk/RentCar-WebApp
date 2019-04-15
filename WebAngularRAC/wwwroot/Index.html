@@ -20,6 +20,34 @@
             function () { console.log('started application'); },
             function (err) { console.log('error starting application'); console.log(err); });
     </script>
+
+    <style>
+        body {
+            background-image: url(../../images/login_back.jpg); /* Путь к фоновому изображению */
+            background-color: grey; /* Цвет фона */
+            background-size: cover;
+        }
+
+        /*.dx-toolbar-items-container {
+            background-color: none !important;
+        }
+
+        .dx-datagrid-header-panel {
+            background-color: none !important;
+        }
+        .dx-datagrid-table dx-datagrid-table-fixed {
+            background-color: white !important;
+        }
+        
+        thead {
+            background-color: darkgrey !important;
+            border-radius: 10px !important;
+        }
+        tbody .dx-row {
+            border-radius: 10px !important;
+            background-color: darkgrey !important;
+        }*/
+    </style>
 </head>
 <body>
     <ng-progress [positionUsing]="'marginLeft'" [minimum]="0.15" [maximum]="1"

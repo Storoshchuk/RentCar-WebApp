@@ -21,6 +21,7 @@ import { AddCarPhotoComponent } from '../app/Cars/AddCarsPhoto.Component'
 import { AllCarsComponent } from '../app/Cars/AllCars.Component'
 import { EditCarComponent } from '../app/Cars/EditCar.Component'
 import { BookingComponent } from '../app/Booking/Booking.Component'
+import { BookingDetailedComponent } from '../app/Booking/BookingDetailed.Component'
 import { AllBookingDetails } from '../app/Booking/AllBookingDetails.Component'
 import { DeleteBooking } from '../app/Booking/DeleteBooking.Component'
 import { AdminDashboardComponent } from '../app/AdminDashboard/AdminDashboard.Component'
@@ -35,6 +36,9 @@ import { PendingBookingComponent } from '../app/Booking/PendingBookingDetail.Com
 import { AllPaymentDetailsAdminComponent } from '../app/Payment/AllPaymentDetailsAdmin.Component'
 import { CarFilterPipe } from '../app/CustomPipes/Carpipe'
 import { ChangePasswordComponent } from '../app/Login/ChangePassword.Component'
+import { CSSCarouselComponent } from '../app/CarGallery/carousel.component'
+
+
 
 
 export const galleryConfig = {
@@ -142,6 +146,11 @@ export const galleryConfig = {
                 canActivate: [AuthGuard]
             },
             {
+                path: 'BookingDetailed/:ID',
+                component: BookingDetailedComponent,
+                canActivate: [AuthGuard]
+            },
+            {
                 path: 'AllBookingDetails',
                 component: AllBookingDetails,
                 canActivate: [AuthGuard]
@@ -188,6 +197,7 @@ export const galleryConfig = {
         AllCarsComponent,
         EditCarComponent,
         BookingComponent,
+        BookingDetailedComponent,
         AllBookingDetails,
         DeleteBooking,
         AdminDashboardComponent,
@@ -199,8 +209,8 @@ export const galleryConfig = {
         PendingBookingComponent,
         AllPaymentDetailsAdminComponent,
         CarFilterPipe,
-        ChangePasswordComponent
-      
+        ChangePasswordComponent,
+      CSSCarouselComponent
     ],
     bootstrap: [AppComponent],
     providers: [AuthGuard, AuthGuardAdmin]
