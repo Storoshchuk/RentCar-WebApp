@@ -1,23 +1,16 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
+﻿
     <nav class='navbar navbar-inverse'>
-        <div class='container-fluid'>
-
+        <div >
+            <h3 style="margin: 0 auto; width: 50%; color: lightgray; padding-top: 10px;">
+                <span style="margin-left: 35%;">Registration</span>
+            </h3>
         </div>
     </nav>
     <div class="container">
-        <div style="float:left; width: 50%">
-            <div class="panel panel-default">
-                <div class="panel-heading">Registration</div>
                 <div class="panel-body">
                     <form #f="ngForm" novalidate (ngSubmit)="onSubmit()">
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-4">
                                 <label for="name">Username</label>
                                 <input type="text" class="form-control" name="Username" [(ngModel)]="UserMasterModel.Username" maxlength="50" (blur)="CheckUsernameExist()" #refUsername="ngModel" id="Username" required>
                                 <div *ngIf="!refUsername.valid  && (refUsername.dirty || refUsername.touched)"
@@ -30,7 +23,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-4">
                                 <label for="name">Password</label>
                                 <input required type="password"
                                        class="form-control"
@@ -49,7 +42,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-4">
                                 <label for="name">Confirm Password</label>
                                 <input type="password"
                                        #refconfirmPassword="ngModel"
@@ -66,7 +59,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-4">
                                 <label for="name">Address</label>
                                 <input type="text" class="form-control" name="Address" maxlength="50" [(ngModel)]="UserMasterModel.Address" #refAddress="ngModel" id="Address" required>
                                 <div *ngIf="!refAddress.valid  && (refAddress.dirty || refAddress.touched)"
@@ -79,7 +72,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-4">
                                 <label for="name">BirthDate</label>
                                 <my-date-picker name="mydate" [options]="myDatePickerOptions" #refBirthdate="ngModel"
                                                 [(ngModel)]="UserMasterModel.BirthdateView" required></my-date-picker>
@@ -93,7 +86,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-4">
                                 <label for="name">Contact No</label>
                                 <input type="text" class="form-control" name="Contact_No" maxlength="10" [(ngModel)]="UserMasterModel.Contact_No" pattern="^\d+$" #refContact_No="ngModel" id="Contact_No" required>
                                 <div *ngIf="!refContact_No.valid  && (refContact_No.dirty || refContact_No.touched)"
@@ -106,7 +99,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-4">
                                 <label for="name">Email</label>
                                 <input type="text" class="form-control" name="Email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" [(ngModel)]="UserMasterModel.Email" #refEmail="ngModel" id="Email" required>
                                 <div *ngIf="!refEmail.valid  && (refEmail.dirty || refEmail.touched)"
@@ -120,30 +113,23 @@
                         </div>
 
                         <div class="row">
-                            <div style="margin-top:10px;" class="col-md-12">
+                            <div style="margin-top:10px;" class="col-md-4">
                                 <button type="submit" [disabled]="!f.form.valid" class="btn btn-success">Submit</button>
+                                <span style="display:inline-flex; float: right">
+                                    <span style="padding-top: 5px; color: white">Already Registered? </span><a class="btn btn-success" style="align-content:center" [routerLink]="['/Login']">Login here..</a>
+                                </span>
                             </div>
                         </div>
 
                     </form>
                 </div>
-            </div>
-        </div>
-        <div style="float:right; width: 50%;">
+        <!--<div style="float:right; width: 50%;">
             <div style="margin-left: 63px;margin-top: 60px;">
-                Already Registered ? <a class="btn btn-success" style="align-content:center" [routerLink]="['/Login']">Login here..</a>
                 <br />
                 <br />
                 <css-carousel></css-carousel>
                 <br />
                 <br />
             </div>
-        </div>
+        </div>-->
     </div>
-    <nav class='navbar navbar-inverse'>
-        <div class='container-fluid'>
-
-        </div>
-    </nav>
-</body>
-</html>
