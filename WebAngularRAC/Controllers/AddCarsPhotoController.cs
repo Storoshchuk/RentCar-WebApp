@@ -65,8 +65,73 @@ namespace WebAngularRAC.Controllers
                     }
                 }
 
-                var cartb = new CarTB { C_Id = C_Id, Image = PathDB };
+
+                
                 var db = _DatabaseContext;
+
+                var last = db.CarTB.ToList().OrderBy(x => x.C_Id).LastOrDefault();
+
+                last.Image = PathDB;
+                //var cartb = new CarTB { C_Id = last.C_Id, Image = PathDB };
+
+                db.CarTB.Update(last);
+                db.SaveChanges();
+                return Json(true);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+
+        public JsonResult UpdatePhoto([FromHeader]ReceiverClass ReceiverClass)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(ReceiverClass.SelectedCarID))
+                {
+                    return Json(false);
+                }
+
+                var files = HttpContext.Request.Form.Files;
+                string PathDB = string.Empty;
+                if (files == null)
+                {
+                    return Json(false);
+                }
+
+                var C_Id = Convert.ToInt32(ReceiverClass.SelectedCarID);
+
+
+                var uploads = Path.Combine(_environment.WebRootPath, "Cars_Upload");
+
+                foreach (var file in files)
+                {
+                    if (file.Length > 0)
+                    {
+                        var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                        var myUniqueFileName = Convert.ToString(Guid.NewGuid());
+                        var FileExtension = Path.GetExtension(fileName);
+                        var newFileName = myUniqueFileName + FileExtension;
+                        fileName = Path.Combine(_environment.WebRootPath, "Cars_Upload") + $@"\{newFileName}";
+                        PathDB = "Cars_Upload/" + newFileName;
+                        using (FileStream fs = System.IO.File.Create(fileName))
+                        {
+                            file.CopyTo(fs);
+                            fs.Flush();
+                        }
+                    }
+                }
+
+
+
+                var db = _DatabaseContext;
+
+                var last = db.CarTB.ToList().OrderBy(x => x.C_Id).LastOrDefault();
+
+                var cartb = new CarTB { C_Id = C_Id, Image = PathDB };
+
                 db.CarTB.Attach(cartb);
                 db.Entry(cartb).Property(x => x.Image).IsModified = true;
                 db.SaveChanges();

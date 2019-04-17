@@ -128,53 +128,19 @@
                 </div>
 
                 <div class="row">
+                    <div class="col-md-4">
+                        <label for="name">Upload Photo</label>
+                        <input type="file" class="form-control" required (change)="fileChange($event)" placeholder="Upload file" accept=".jpg,.jpeg,.png,.pdf,.doc,.docx">
+                    </div>
+                </div>
+
+                <div class="row">
                     <div style="margin-top:10px;" class="col-md-4">
                         <button type="submit" [disabled]="!f.form.valid" class="btn btn-success">Submit</button>
                     </div>
                 </div>
             </form>
 
-            <!--<div class='panel-body'>
-
-                <form #f="ngForm" novalidate (ngSubmit)="onSubmit()">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <label for="name">Model Name</label>
-                            <select required name="Car"
-                                    #refCar="ngModel"
-                                    class="form-control" [(ngModel)]="selectedCar">
-                                <option value="undefined">Please select Value</option>
-                                <option *ngFor="let car of CarData"
-                                        [ngValue]="car.C_Id">
-                                    {{car.Model_Name}}
-                                </option>
-                            </select>
-                            <div *ngIf="!refCar.valid  && (refCar.dirty || refCar.touched)"
-                                 class="alert alert-danger">
-                                <div [hidden]="!refCar.errors.required">
-                                    Required
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <label for="name">Upload Photo</label>
-                            <input type="file" class="form-control" required (change)="fileChange($event)" placeholder="Upload file" accept=".jpg,.jpeg,.png,.pdf,.doc,.docx">
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <br />
-                            <button type="submit" [disabled]="!f.form.valid" class="btn btn-success">Upload Photos</button>
-                        </div>
-                    </div>
-                </form>
-
-            </div>-->
         </div>
         <!--</div>
     </div>-->
