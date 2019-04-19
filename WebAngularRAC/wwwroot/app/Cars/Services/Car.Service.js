@@ -8,13 +8,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/map");
 require("rxjs/add/operator/catch");
 require("rxjs/add/observable/throw");
-var CarService = (function () {
+var CarService = /** @class */ (function () {
     function CarService(_http, _Route) {
         var _this = this;
         this._http = _http;
@@ -97,11 +98,24 @@ var CarService = (function () {
             return response;
         });
     };
+    CarService.prototype.DeleteCar = function (id) {
+        var _this = this;
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        headers.append('Token', "" + this.token);
+        var options = new http_1.RequestOptions({ headers: headers });
+        return this._http.delete("http://localhost:56483/api/Cars/" + id, options).map(function (res) { return res.json(); })
+            .catch(function (response) {
+            if (response.status === 401) {
+                _this._Route.navigate(['Login']);
+            }
+            return response;
+        });
+    };
+    CarService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.Http, router_1.Router])
+    ], CarService);
     return CarService;
 }());
-CarService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http, router_1.Router])
-], CarService);
 exports.CarService = CarService;
 //# sourceMappingURL=Car.Service.js.map

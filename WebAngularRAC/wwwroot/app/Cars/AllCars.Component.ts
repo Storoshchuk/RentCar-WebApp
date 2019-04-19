@@ -35,5 +35,21 @@ export class AllCarsComponent implements OnInit
        
     }
 
+    deleteCar(id: number) {
+        this._carservice.DeleteCar(id)
+            .subscribe(data => { },
+                error => {
+                    if (error) {
+                        alert("An Error has occured please try again after some time !");
+                    }
+                });
+
+        var filtered = this.CarData.filter(function (value) {
+            return value.C_Id !== id;
+        });
+
+        this.CarData = filtered;
+
+    }
 
 }
