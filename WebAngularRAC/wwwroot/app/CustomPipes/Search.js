@@ -7,23 +7,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var CarFilterPipe = /** @class */ (function () {
-    function CarFilterPipe() {
+var SearchPipe = /** @class */ (function () {
+    function SearchPipe() {
     }
-    CarFilterPipe.prototype.transform = function (items, filter) {
-        if (!items || !filter) {
-            return items;
+    SearchPipe.prototype.transform = function (array, value) {
+        if (array === undefined) {
+            return null;
         }
-        // filter items array, items which match and return true will be kept, false will be filtered out
-        return items.filter(function (item) { return item.title.indexOf(filter.Model_Name) !== -1; });
+        return array.filter(function (car) { return car.Model_Name.indexOf(value) !== -1; });
     };
-    CarFilterPipe = __decorate([
+    SearchPipe = __decorate([
         core_1.Pipe({
-            name: 'carfilter',
-            pure: false
+            name: 'search'
         })
-    ], CarFilterPipe);
-    return CarFilterPipe;
+    ], SearchPipe);
+    return SearchPipe;
 }());
-exports.CarFilterPipe = CarFilterPipe;
-//# sourceMappingURL=Carpipe.js.map
+exports.SearchPipe = SearchPipe;
+//# sourceMappingURL=Search.js.map

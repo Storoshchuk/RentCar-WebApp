@@ -37,6 +37,7 @@ import { AllPaymentDetailsAdminComponent } from '../app/Payment/AllPaymentDetail
 import { CarFilterPipe } from '../app/CustomPipes/Carpipe'
 import { ChangePasswordComponent } from '../app/Login/ChangePassword.Component'
 import { CSSCarouselComponent } from '../app/CarGallery/carousel.component'
+import { SearchPipe } from "./CustomPipes/Search";
 
 
 
@@ -75,7 +76,7 @@ export const galleryConfig = {
 }
 
 @NgModule({
-    imports: [BrowserModule, FormsModule, HttpModule, MyDatePickerModule, NgProgressModule, Ng2DatetimePickerModule, DxDataGridModule, 
+    imports: [BrowserModule, FormsModule, HttpModule, MyDatePickerModule, NgProgressModule, Ng2DatetimePickerModule, DxDataGridModule,
 
         RouterModule.forRoot([
             {
@@ -209,8 +210,9 @@ export const galleryConfig = {
         PendingBookingComponent,
         AllPaymentDetailsAdminComponent,
         CarFilterPipe,
+        SearchPipe,
         ChangePasswordComponent,
-      CSSCarouselComponent
+        CSSCarouselComponent
     ],
     bootstrap: [AppComponent],
     providers: [AuthGuard, AuthGuardAdmin]

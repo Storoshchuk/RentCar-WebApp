@@ -8,12 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var Booking_Service_1 = require("../Booking/Services/Booking.Service");
 var ng2_progressbar_1 = require("ng2-progressbar");
 var router_1 = require("@angular/router");
 var Car_Service_1 = require("../Cars/Services/Car.Service");
-var DeleteBooking = (function () {
+var DeleteBooking = /** @class */ (function () {
     function DeleteBooking(pService, _carservice, _Route, _bookingservice, _routeParams) {
         this.pService = pService;
         this._carservice = _carservice;
@@ -53,14 +54,14 @@ var DeleteBooking = (function () {
             });
         }
     };
+    DeleteBooking = __decorate([
+        core_1.Component({
+            templateUrl: 'app/Booking/DeleteBooking.html',
+            providers: [Booking_Service_1.BookingService, Car_Service_1.CarService]
+        }),
+        __metadata("design:paramtypes", [ng2_progressbar_1.NgProgressService, Car_Service_1.CarService, router_1.Router, Booking_Service_1.BookingService, router_1.ActivatedRoute])
+    ], DeleteBooking);
     return DeleteBooking;
 }());
-DeleteBooking = __decorate([
-    core_1.Component({
-        templateUrl: 'app/Booking/DeleteBooking.html',
-        providers: [Booking_Service_1.BookingService, Car_Service_1.CarService]
-    }),
-    __metadata("design:paramtypes", [ng2_progressbar_1.NgProgressService, Car_Service_1.CarService, router_1.Router, Booking_Service_1.BookingService, router_1.ActivatedRoute])
-], DeleteBooking);
 exports.DeleteBooking = DeleteBooking;
 //# sourceMappingURL=DeleteBooking.Component.js.map

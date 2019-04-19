@@ -12,9 +12,9 @@ import { NgProgressService } from "ng2-progressbar";
 
 export class BookingComponent implements OnInit {
     CarData: CarModel[];
+    public searchStr: string;
 
-
-    constructor(private _bookingservice: BookingService) {
+    constructor(private _bookingservice: BookingService, private _Route: Router) {
 
     }
 
@@ -27,6 +27,8 @@ export class BookingComponent implements OnInit {
                 if (data != null)
                 {
                     this.CarData = data;
+                    this.searchStr = " ";
+                    this.searchStr = "";
                 }
             },
             error => {
