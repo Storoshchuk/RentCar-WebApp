@@ -8,13 +8,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var Car_Model_1 = require("../Cars/Car.Model");
 var Car_Service_1 = require("../Cars/Services/Car.Service");
 var ng2_progressbar_1 = require("ng2-progressbar");
 var router_1 = require("@angular/router");
 var http_1 = require("@angular/http");
-var AddCarPhotoComponent = (function () {
+var AddCarPhotoComponent = /** @class */ (function () {
     function AddCarPhotoComponent(http, _carservice, pService, _Route) {
         this.http = http;
         this._carservice = _carservice;
@@ -80,14 +81,14 @@ var AddCarPhotoComponent = (function () {
             }
         }
     };
+    AddCarPhotoComponent = __decorate([
+        core_1.Component({
+            templateUrl: 'app/Cars/AddCarsPhoto.html',
+            providers: [Car_Service_1.CarService]
+        }),
+        __metadata("design:paramtypes", [http_1.Http, Car_Service_1.CarService, ng2_progressbar_1.NgProgressService, router_1.Router])
+    ], AddCarPhotoComponent);
     return AddCarPhotoComponent;
 }());
-AddCarPhotoComponent = __decorate([
-    core_1.Component({
-        templateUrl: 'app/Cars/AddCarsPhoto.html',
-        providers: [Car_Service_1.CarService]
-    }),
-    __metadata("design:paramtypes", [http_1.Http, Car_Service_1.CarService, ng2_progressbar_1.NgProgressService, router_1.Router])
-], AddCarPhotoComponent);
 exports.AddCarPhotoComponent = AddCarPhotoComponent;
 //# sourceMappingURL=AddCarsPhoto.Component.js.map

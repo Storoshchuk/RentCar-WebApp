@@ -1,5 +1,6 @@
 "use strict";
-var CarModel = (function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+var CarModel = /** @class */ (function () {
     function CarModel() {
         this.Username = "";
     }

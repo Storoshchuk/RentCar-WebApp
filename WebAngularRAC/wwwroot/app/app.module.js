@@ -42,6 +42,7 @@ var AllPaymentDetailsAdmin_Component_1 = require("../app/Payment/AllPaymentDetai
 var Carpipe_1 = require("../app/CustomPipes/Carpipe");
 var ChangePassword_Component_1 = require("../app/Login/ChangePassword.Component");
 var carousel_component_1 = require("../app/CarGallery/carousel.component");
+var Search_1 = require("./CustomPipes/Search");
 exports.galleryConfig = {
     "style": {
         "background": "#121519",
@@ -211,6 +212,7 @@ var AppModule = /** @class */ (function () {
                 PendingBookingDetail_Component_1.PendingBookingComponent,
                 AllPaymentDetailsAdmin_Component_1.AllPaymentDetailsAdminComponent,
                 Carpipe_1.CarFilterPipe,
+                Search_1.SearchPipe,
                 ChangePassword_Component_1.ChangePasswordComponent,
                 carousel_component_1.CSSCarouselComponent
             ],

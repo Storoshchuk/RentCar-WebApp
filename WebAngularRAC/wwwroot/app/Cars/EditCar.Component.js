@@ -8,12 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var Car_Model_1 = require("../Cars/Car.Model");
 var Car_Service_1 = require("../Cars/Services/Car.Service");
 var ng2_progressbar_1 = require("ng2-progressbar");
 var router_1 = require("@angular/router");
-var EditCarComponent = (function () {
+var EditCarComponent = /** @class */ (function () {
     function EditCarComponent(pService, _Route, _carservice, _routeParams) {
         this.pService = pService;
         this._Route = _Route;
@@ -56,14 +57,14 @@ var EditCarComponent = (function () {
             }
         });
     };
+    EditCarComponent = __decorate([
+        core_1.Component({
+            templateUrl: 'app/Cars/EditCar.html',
+            providers: [Car_Service_1.CarService]
+        }),
+        __metadata("design:paramtypes", [ng2_progressbar_1.NgProgressService, router_1.Router, Car_Service_1.CarService, router_1.ActivatedRoute])
+    ], EditCarComponent);
     return EditCarComponent;
 }());
-EditCarComponent = __decorate([
-    core_1.Component({
-        templateUrl: 'app/Cars/EditCar.html',
-        providers: [Car_Service_1.CarService]
-    }),
-    __metadata("design:paramtypes", [ng2_progressbar_1.NgProgressService, router_1.Router, Car_Service_1.CarService, router_1.ActivatedRoute])
-], EditCarComponent);
 exports.EditCarComponent = EditCarComponent;
 //# sourceMappingURL=EditCar.Component.js.map

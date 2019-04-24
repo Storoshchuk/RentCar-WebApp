@@ -1,22 +1,15 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
+﻿
 
     <div class="container">
         <nav class='navbar navbar-inverse'>
             <div class='container-fluid'>
                 <ul class='nav navbar-nav'>
                     <li><a [routerLink]="['/AdminDashboard']">Home</a></li>
-                    <li><a [routerLink]="['/Car']">Додати авто</a></li>
-                    <li><a [routerLink]="['/UploadCarPhoto']">Upload Car Photo</a></li>
                     <li><a [routerLink]="['/AdminLogout']">Вийти</a></li>
                 </ul>
             </div>
         </nav>
+
 
         <div class='panel-body'>
            
@@ -44,9 +37,10 @@
                             <td>{{CarDetails.No_of_Pas}}</td>
                             <td>{{CarDetails.Price}}</td>
                             <td>{{CarDetails.Fueltype}}</td>
-                            <td><img alt="" width="150px" height="150px" [src]="CarDetails.Image" /></td>
+                            <td><img alt="" height="150px" [src]="CarDetails.Image" /></td>
                             <td>
-                                <a class="btn btn-success" [routerLink]="['/EditCar', CarDetails.C_Id]">Редагувати</a>
+                                <a class="btn btn-success" [routerLink]="['/EditCar', CarDetails.C_Id]">Edit</a>
+                                <a class="btn btn-warning" (click)="deleteCar(CarDetails.C_Id)">Delete</a>
                             </td>
                         </tr>
                     </tbody>
@@ -56,5 +50,5 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+<!--</body>
+</html>-->

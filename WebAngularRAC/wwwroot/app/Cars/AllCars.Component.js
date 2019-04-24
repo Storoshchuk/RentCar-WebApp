@@ -8,10 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var Car_Service_1 = require("../Cars/Services/Car.Service");
 var ng2_progressbar_1 = require("ng2-progressbar");
-var AllCarsComponent = (function () {
+var AllCarsComponent = /** @class */ (function () {
     function AllCarsComponent(pService, _carservice) {
         this.pService = pService;
         this._carservice = _carservice;
@@ -30,14 +31,26 @@ var AllCarsComponent = (function () {
             }
         });
     };
+    AllCarsComponent.prototype.deleteCar = function (id) {
+        this._carservice.DeleteCar(id)
+            .subscribe(function (data) { }, function (error) {
+            if (error) {
+                alert("An Error has occured please try again after some time !");
+            }
+        });
+        var filtered = this.CarData.filter(function (value) {
+            return value.C_Id !== id;
+        });
+        this.CarData = filtered;
+    };
+    AllCarsComponent = __decorate([
+        core_1.Component({
+            templateUrl: 'app/Cars/AllCars.html',
+            providers: [Car_Service_1.CarService]
+        }),
+        __metadata("design:paramtypes", [ng2_progressbar_1.NgProgressService, Car_Service_1.CarService])
+    ], AllCarsComponent);
     return AllCarsComponent;
 }());
-AllCarsComponent = __decorate([
-    core_1.Component({
-        templateUrl: 'app/Cars/AllCars.html',
-        providers: [Car_Service_1.CarService]
-    }),
-    __metadata("design:paramtypes", [ng2_progressbar_1.NgProgressService, Car_Service_1.CarService])
-], AllCarsComponent);
 exports.AllCarsComponent = AllCarsComponent;
 //# sourceMappingURL=AllCars.Component.js.map

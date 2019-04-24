@@ -105,4 +105,17 @@ export class CarService {
             });
     }
 
+    public DeleteCar(id: number) {
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        headers.append('Token', `${this.token}`);
+        let options = new RequestOptions({ headers: headers });
+        return this._http.delete("http://localhost:56483/api/Cars/" + id, options).map((res: Response) => res.json())
+            .catch(response => {
+                if (response.status === 401) {
+                    this._Route.navigate(['Login']);
+                }
+                return response;
+            });
+    }
+
 }
