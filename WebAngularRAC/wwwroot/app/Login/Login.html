@@ -6,7 +6,7 @@
 
                     <div class="form-login">
                         <h4>Welcome back</h4>
-                        <label for="name">Username</label>
+                        <label for="name">Логін</label>
                         <input type="text" class="form-control"
                                name="Username"
                                [(ngModel)]="LoginModel.Username"
@@ -16,14 +16,14 @@
                         <div *ngIf="!refUsername.valid  && (refUsername.dirty || refUsername.touched)"
                              class="alert alert-danger">
                             <div [hidden]="!refUsername.errors.required">
-                                Username is required
+                                Потрібно вказати логін!
                             </div>
 
                         </div>
 
                         <br />
 
-                        <label for="name">Password</label>
+                        <label for="name">Пароль</label>
                         <input required type="password"
                                class="form-control"
                                name="password"
@@ -32,7 +32,7 @@
                         <div *ngIf="!refpassword.valid  && (refpassword.dirty || refpassword.touched)"
                              class="alert alert-danger">
                             <div [hidden]="!refpassword.errors.required">
-                                Password is required
+                                Потрібно вказати пароль!
                             </div>
                         </div>
                         <br />

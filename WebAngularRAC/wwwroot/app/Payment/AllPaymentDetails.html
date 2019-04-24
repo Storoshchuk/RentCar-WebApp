@@ -4,8 +4,8 @@
         <div class='container-fluid'>
             <ul class='nav navbar-nav'>
                 <li><a [routerLink]="['/UserDashboard']">Home</a></li>
-                <li><a [routerLink]="['/ChangePassword']">ChangePassword</a></li>
-                <li><a [routerLink]="['/UserLogout']">Logout</a></li>
+                <li><a [routerLink]="['/ChangePassword']">Змінити пароль</a></li>
+                <li><a [routerLink]="['/UserLogout']">Вийти</a></li>
             </ul>
         </div>
     </nav>
@@ -34,7 +34,7 @@
                         <dxi-column sortOrder="asc" dataField="ToDate"></dxi-column>
                         <dxi-column dataField="Amount"></dxi-column>
                         <dxi-column dataField="Status"></dxi-column>
-                        <dxi-column caption="Payed On" dataType="date" dataField="CreatedOn"></dxi-column>
+                        <dxi-column caption="Оплачено" dataType="date" dataField="CreatedOn"></dxi-column>
                     </dx-data-grid>
                 </div>
             </div>

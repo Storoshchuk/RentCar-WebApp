@@ -12,10 +12,10 @@
             <div class='container-fluid'>
                 <ul class='nav navbar-nav'>
                     <li><a [routerLink]="['/AdminDashboard']">Home</a></li>
-                    <li><a [routerLink]="['/Car']">Add Car</a></li>
+                    <li><a [routerLink]="['/Car']">Додати авто</a></li>
                     <li><a [routerLink]="['/UploadCarPhoto']">Upload Car Photo</a></li>
-                    <li><a [routerLink]="['/AllCar']">ShowAll Car</a></li>
-                    <li><a [routerLink]="['/AdminLogout']">Logout</a></li>
+                    <li><a [routerLink]="['/AllCar']">Показати всі авто</a></li>
+                    <li><a [routerLink]="['/AdminLogout']">Вийти</a></li>
                 </ul>
             </div>
         </nav>
@@ -25,7 +25,7 @@
         <form #f="ngForm" novalidate (ngSubmit)="onSubmit()">
             <div class="row">
                 <div class="col-md-4">
-                    <label for="name">Model Name</label>
+                    <label for="name">Модель</label>
                     <input type="text" class="form-control" name="Model_Name"
                            [(ngModel)]="carmodel.Model_Name"
                            (blur)="CheckModelNameExist()"
@@ -34,7 +34,7 @@
                     <div *ngIf="!refModelName.valid  && (refModelName.dirty || refModelName.touched)"
                          class="alert alert-danger">
                         <div [hidden]="!refModelName.errors.required">
-                            Model Name is required
+                            Потрібно вказати назву моделі!
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
 
             <div class="row">
                 <div class="col-md-4">
-                    <label for="name">Brand Name</label>
+                    <label for="name">Бренд</label>
                     <input type="text"
                            class="form-control"
                            name="Brand"
@@ -55,7 +55,7 @@
                     <div *ngIf="!refBrand.valid  && (refBrand.dirty || refBrand.touched)"
                          class="alert alert-danger">
                         <div [hidden]="!refBrand.errors.required">
-                            Brand Name is required
+                            Потрібно вказати бренд!
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
 
             <div class="row">
                 <div class="col-md-4">
-                    <label for="name">Color Name</label>
+                    <label for="name">Колір</label>
                     <input type="text"
                            class="form-control"
                            name="Color"
@@ -74,7 +74,7 @@
                     <div *ngIf="!refColor.valid  && (refColor.dirty || refColor.touched)"
                          class="alert alert-danger">
                         <div [hidden]="!refColor.errors.required">
-                            Color Name is required
+                            Потрібно вказати колір!
                         </div>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
 
             <div class="row">
                 <div class="col-md-4">
-                    <label for="name">No of passenger</label>
+                    <label for="name">Кількість пасажирів</label>
                     <input type="text"
                            class="form-control"
                            name="No_of_Pas"
@@ -94,7 +94,7 @@
 
                     <div *ngIf="!refNo_of_Pas.valid  && (refNo_of_Pas.dirty || refNo_of_Pas.touched)"
                          class="alert alert-danger">
-                        No of passenger is required / Only Numbers are allowed
+                        Потрібно вказати кількість пасажирів / Дозволені лише цифри!
                     </div>
                     <div *ngIf="refNo_of_Pas.errors && submitted"
                          class="alert-danger">
@@ -106,7 +106,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    <label for="name">Price</label>
+                    <label for="name">Ціна</label>
                     <input type="text"
                            class="form-control"
                            name="Price"
@@ -117,14 +117,14 @@
 
                     <div *ngIf="!refPrice.valid  && (refPrice.dirty || refPrice.touched)"
                          class="alert alert-danger">
-                        Price is required / Only Numbers are allowed
+                        Потрібно вказати ціну! / Дозволені лише цифри!
                     </div>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-4">
-                    <label for="name">Fueltype</label>
+                    <label for="name">Тип палива</label>
                     <input type="text"
                            class="form-control"
                            name="Fueltype"
@@ -134,7 +134,7 @@
                     <div *ngIf="!refFueltype.valid  && (refFueltype.dirty || refFueltype.touched)"
                          class="alert alert-danger">
                         <div [hidden]="!refFueltype.errors.required">
-                            Fueltype is required
+                            Потрібно вказати тип палива!
                         </div>
                     </div>
                 </div>
@@ -142,7 +142,7 @@
 
             <div class="row">
                 <div style="margin-top:10px;" class="col-md-4">
-                    <button type="submit" [disabled]="!f.form.valid" class="btn btn-success">Submit</button>
+                    <button type="submit" [disabled]="!f.form.valid" class="btn btn-success">Підтвердити</button>
                 </div>
             </div>
         </form>

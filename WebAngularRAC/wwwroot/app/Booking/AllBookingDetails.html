@@ -3,7 +3,7 @@
             <div class='container-fluid'>
                 <ul class='nav navbar-nav'>
                     <li><a [routerLink]="['/UserDashboard']">Home</a></li>
-                    <li><a [routerLink]="['/UserLogout']">Logout</a></li>
+                    <li><a [routerLink]="['/UserLogout']">Вийти</a></li>
                 </ul>
             </div>
         </nav>
@@ -30,13 +30,13 @@
                         <dxi-column sortOrder="asc" dataField="Name"></dxi-column>
                         <dxi-column [width]="150" sortOrder="asc" dataField="FromDate"></dxi-column>
                         <dxi-column [width]="150" sortOrder="asc" dataField="ToDate"></dxi-column>
-                        <dxi-column caption="Source" dataField="S_address"></dxi-column>
-                        <dxi-column caption="Destination" dataField="D_address"></dxi-column>
+                        <dxi-column caption="Адреса виїзду" dataField="S_address"></dxi-column>
+                        <dxi-column caption="Адреса призначення" dataField="D_address"></dxi-column>
                         <dxi-column dataField="Carname"></dxi-column>
                         <dxi-column dataField="ModelName"></dxi-column>
                         <dxi-column dataField="Status"></dxi-column>
                         <dxi-column [width]="80" dataField="Amount"></dxi-column>
-                        <dxi-column [width]="100" caption="Booked On" dataType="date" dataField="CreatedOn"></dxi-column>
+                        <dxi-column [width]="100" caption="Заброньовано" dataType="date" dataField="CreatedOn"></dxi-column>
 
                     </dx-data-grid>
 

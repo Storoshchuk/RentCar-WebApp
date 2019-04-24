@@ -2,7 +2,7 @@
     <nav class='navbar navbar-inverse'>
         <div >
             <h3 style="margin: 0 auto; width: 50%; color: lightgray; padding-top: 10px;">
-                <span style="margin-left: 35%;">Registration</span>
+                <span style="margin-left: 35%;">Реєстрація</span>
             </h3>
         </div>
     </nav>
@@ -24,7 +24,7 @@
 
                         <div class="row">
                             <div class="col-md-4">
-                                <label for="name">Password</label>
+                                <label for="name">Пароль</label>
                                 <input required type="password"
                                        class="form-control"
                                        name="password"
@@ -43,7 +43,7 @@
 
                         <div class="row">
                             <div class="col-md-4">
-                                <label for="name">Confirm Password</label>
+                                <label for="name">Підтвержений пароль</label>
                                 <input type="password"
                                        #refconfirmPassword="ngModel"
                                        class="form-control"
@@ -53,19 +53,19 @@
                                        required
                                        validateEqual="password">
                                 <div class="alert alert-danger" [hidden]="refconfirmPassword.valid || (refconfirmPassword.pristine)">
-                                    Password mismatch
+                                    Паролі не співпадають!
                                 </div>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-4">
-                                <label for="name">Address</label>
+                                <label for="name">Адреса</label>
                                 <input type="text" class="form-control" name="Address" maxlength="50" [(ngModel)]="UserMasterModel.Address" #refAddress="ngModel" id="Address" required>
                                 <div *ngIf="!refAddress.valid  && (refAddress.dirty || refAddress.touched)"
                                      class="alert alert-danger">
                                     <div [hidden]="!refAddress.errors.required">
-                                        Address is required
+                                        Потрібно вказати адресу!
                                     </div>
                                 </div>
                             </div>
@@ -73,13 +73,13 @@
 
                         <div class="row">
                             <div class="col-md-4">
-                                <label for="name">BirthDate</label>
+                                <label for="name">Дата народження</label>
                                 <my-date-picker name="mydate" [options]="myDatePickerOptions" #refBirthdate="ngModel"
                                                 [(ngModel)]="UserMasterModel.BirthdateView" required></my-date-picker>
                                 <div *ngIf="!refBirthdate.valid  && (refBirthdate.dirty || refBirthdate.touched)"
                                      class="alert alert-danger">
                                     <div [hidden]="!refBirthdate.errors.required">
-                                        Birthdate is required
+                                       Потрібно вказати дату народження!
                                     </div>
                                 </div>
                             </div>
@@ -87,12 +87,12 @@
 
                         <div class="row">
                             <div class="col-md-4">
-                                <label for="name">Contact No</label>
+                                <label for="name">Контактний телефон</label>
                                 <input type="text" class="form-control" name="Contact_No" maxlength="10" [(ngModel)]="UserMasterModel.Contact_No" pattern="^\d+$" #refContact_No="ngModel" id="Contact_No" required>
                                 <div *ngIf="!refContact_No.valid  && (refContact_No.dirty || refContact_No.touched)"
                                      class="alert alert-danger">
                                     <div [hidden]="refContact_No.valid || (refContact_No.pristine)">
-                                        Only Numbers are allowed
+                                        Дозволені лише цифри!
                                     </div>
                                 </div>
                             </div>
@@ -105,7 +105,7 @@
                                 <div *ngIf="!refEmail.valid  && (refEmail.dirty || refEmail.touched)"
                                      class="alert alert-danger">
                                     <div [hidden]="refEmail.valid || (refEmail.pristine)">
-                                        Email is required and format should be <i>saineshwar@bageri.com</i>.
+                                        Потрібно вказати електронну адресу у форматі <i>dtoroshchuk@gmail.com</i>.
                                     </div>
                                 </div>
                             </div>
