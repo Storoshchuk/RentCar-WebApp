@@ -15,7 +15,8 @@ var SearchPipe = /** @class */ (function () {
             return null;
         }
         return array.filter(function (car) { return car.Model_Name.indexOf(value) !== -1 ||
-            car.Fueltype.indexOf(value) !== -1; });
+            car.Fueltype.indexOf(value) !== -1 ||
+            car.No_of_Pas === +value; });
     };
     SearchPipe = __decorate([
         core_1.Pipe({

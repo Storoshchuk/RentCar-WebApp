@@ -11,15 +11,24 @@
 </div>
 
         <!--<div class="panel panel-default">-->
-            <div class="panel-heading" style="background-color: antiquewhite;">
-                <input type="text" [(ngModel)]="searchStr" placeholder="Find car...">
+<div class="panel-heading" style="background-color: antiquewhite; margin-left: 30px">
+    <input type="text" [(ngModel)]="searchStr" placeholder="Find car...">
 
-                <select [(ngModel)]="searchStr" style="float: right; display: inline-flex">
-                    <option value="" disabled selected>Оберіть тип палива...</option>
-                    <option value="Petrol">Petrol</option>
-                    <option value="Diesel">Diesel</option>
-                </select>
-            </div>
+    <select [(ngModel)]="searchStr" style="float: right; display: inline-flex">
+        <option value="" disabled selected>Оберіть тип палива...</option>
+        <option value="Petrol">Petrol</option>
+        <option value="Diesel">Diesel</option>
+    </select>
+
+    <select [(ngModel)]="searchStr" style="float: right; display: inline-flex">
+        <option value="" disabled selected>Оберіть кількість місць...</option>
+        <option value="2">2</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="7">7</option>
+        <option value="9">9</option>
+    </select>
+</div>
             <div class="panel-body" style="margin-left: 30px">      
                     <div class="row">
                             <div class="col-sm-4" style="margin-top:20px" *ngFor="let c of CarData | search:searchStr">

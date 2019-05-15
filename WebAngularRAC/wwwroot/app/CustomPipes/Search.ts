@@ -11,6 +11,7 @@ export class SearchPipe implements PipeTransform {
         }
 
         return array.filter((car: CarModel) => car.Model_Name.indexOf(value) !== -1 ||
-                                                car.Fueltype.indexOf(value) !== -1);
+            car.Fueltype.indexOf(value) !== -1 ||
+            car.No_of_Pas === +value);
     }
 }
