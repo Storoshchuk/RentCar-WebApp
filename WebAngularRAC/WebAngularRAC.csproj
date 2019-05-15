@@ -8,7 +8,9 @@
 
   <ItemGroup>
     <Content Remove="wwwroot/app\Cars\Services\ypzvolp1.sht~" />
+    <Content Remove="wwwroot\app\app.module.ts" />
     <Content Remove="wwwroot\app\Booking\BookingDetailed.Component.ts" />
+    <Content Remove="wwwroot\app\CustomPipes\Search.ts" />
   </ItemGroup>
 
   <!--
@@ -108,6 +110,8 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="wwwroot\app\Booking\BookingDetailed.Component.ts" />
+    <TypeScriptCompile Include="wwwroot\app\CustomPipes\Search.ts" />
+    <TypeScriptCompile Include="wwwroot\app\app.module.ts" />
   </ItemGroup>
   
 </Project>
