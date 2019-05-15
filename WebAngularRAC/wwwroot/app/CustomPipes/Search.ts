@@ -10,6 +10,7 @@ export class SearchPipe implements PipeTransform {
             return null;
         }
 
-        return array.filter((car: CarModel) => car.Model_Name.indexOf(value) !== -1);
+        return array.filter((car: CarModel) => car.Model_Name.indexOf(value) !== -1 ||
+                                                car.Fueltype.indexOf(value) !== -1);
     }
 }
