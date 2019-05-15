@@ -2,27 +2,54 @@
 <div class="container">
     <nav class='navbar navbar-inverse'>
         <div class='container-fluid'>
-            <ul class='nav navbar-nav'>
-                <li><a [routerLink]="['/UserDashboard']">Home</a></li>
-                <li><a [routerLink]="['/UserLogout']">Вийти</a></li>
-            </ul>
+            
+            <div style="margin-top: 10px">
+                <a [routerLink]="['/UserDashboard']">Home</a>
+                <p style="float: right; display: inline-flex"><a [routerLink]="['/UserLogout']">Вийти</a></p>
+            </div>
+
         </div>
     </nav>
 </div>
 
         <!--<div class="panel panel-default">-->
-            <div class="panel-heading" style="background-color: antiquewhite;">
-                <input type="text" [(ngModel)]="searchStr" placeholder="Знайти авто...">
-            </div>
-            <div class="panel-body" style="margin-left: 30px">      
+<div class="panel-heading" style="background-color: antiquewhite; margin-left: 30px; height: 55px;">
+    <input type="text" class="form-control" [(ngModel)]="searchStr" style="width: 250px; float: left; display: inline-flex" placeholder="Знайти авто...">
+
+    <select [(ngModel)]="searchStr" class="form-control" style="width: 210px; float: right; display: inline-flex">
+        <option value="" disabled selected>Оберіть тип палива...</option>
+        <option value="Petrol">Petrol</option>
+        <option value="Diesel">Diesel</option>
+    </select>
+
+    <select class="form-control" [(ngModel)]="searchStr" style="width: 210px; float: right; display: inline-flex">
+        <option value="" disabled selected>Оберіть кількість місць...</option>
+        <option value="2">2</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="7">7</option>
+        <option value="9">9</option>
+    </select>
+</div>
+            <div class="panel-body" style="margin-left: 45px">      
                     <div class="row">
                             <div class="col-sm-4" style="margin-top:20px" *ngFor="let c of CarData | search:searchStr">
                                 <div class="card bg-warning" style="width:300px; border-radius: 10px">
                                     <img class="card-img-top" title="{{c.Model_Name}}" style="width:300px; height: 200px; border-top-left-radius: 10px; border-top-right-radius: 10px;" src="{{c.Image}}" alt="Car image">
                                     <div class="card-body">
-                                        <h4 class="card-title">{{c.Model_Name}}</h4>
-                                        <p class="card-text">{{c.Price}}</p>
-                                        <a routerLink="/BookingDetailed/{{c.C_Id}}" class="btn btn-warning">Забронювати</a>
+                                        <h4 class="card-title" style="margin-left: 10px"><strong>{{c.Model_Name}}</strong></h4>
+
+                                        <ul style="margin-left: 10px">
+                                            <li>
+                                                Кількість місць: {{c.No_of_Pas}}
+                                            </li>
+                                            <li>
+                                                Тип палива: {{c.Fueltype}}
+                                            </li>
+                                        </ul>
+
+                                        <p class="card-text" style="margin-left: 10px"><strong>Ціна: {{c.Price}} грн.</strong></p>
+                                        <a routerLink="/BookingDetailed/{{c.C_Id}}" class="btn btn-success" style="margin-left: 10px; margin-bottom: 10px">Забронювати</a>
                                     </div>
                                 </div>
                             </div>

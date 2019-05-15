@@ -137,5 +137,34 @@ namespace WebAngularRAC.Controllers
             }
 
         }
+
+        // PUT api/values/5
+        [HttpDelete("{id}")]
+        public bool Delete(int id)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(Convert.ToString(id)))
+                {
+                    return false;
+                }
+
+                var db = _DatabaseContext;
+
+                var car = db.CarTB.Where(x => x.C_Id == id).FirstOrDefault();
+
+                if (car != null)
+                {
+                    db.CarTB.Remove(car);
+                    db.SaveChanges();
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
     }
 }
