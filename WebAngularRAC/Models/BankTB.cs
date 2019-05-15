@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace WebAngularRAC.Models
 {
+    // db table
     [Table("BankTB")]
     public class BankTB
     {

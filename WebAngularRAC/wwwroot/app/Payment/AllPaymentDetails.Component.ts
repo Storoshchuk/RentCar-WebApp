@@ -33,7 +33,7 @@ export class AllPaymentDetails
             {
                 if (error)
                 {
-                    alert("An Error has occured please try again after some time !");
+                    alert("Сталася помилка. Повторіть спробу через деякий час!");
                 }
             });
     }

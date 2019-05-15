@@ -4,7 +4,7 @@
             <div class='container-fluid'>
                 <ul class='nav navbar-nav'>
                     <li><a [routerLink]="['/UserDashboard']">Home</a></li>
-                    <li><a [routerLink]="['/UserLogout']">Logout</a></li>
+                    <li><a [routerLink]="['/UserLogout']">Вийти</a></li>
                 </ul>
             </div>
         </nav>
@@ -15,12 +15,12 @@
                         <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>FromDate</th>
-                                <th>ToDate</th>
-                                <th>S_address</th>
-                                <th>D_address</th>
-                                <th>Delete</th>
-                                <th>Make Payment</th>
+                                <th>З дати</th>
+                                <th>До дати</th>
+                                <th>Адреса виїзду</th>
+                                <th>Адреса призначення</th>
+                                <th>Видалити</th>
+                                <th>Зробити оплату</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -35,7 +35,7 @@
                                     <input class="btn btn-danger" value="Delete Booking" type="button" (click)="Delete(book.BookingID)" />
                                 </td>
                                 <td>
-                                    <a class="btn btn-success" [routerLink]="['/Payment', book.BookingID]">Make Payment</a>
+                                    <a class="btn btn-success" [routerLink]="['/Payment', book.BookingID]">Провести оплату</a>
                                 </td>
                             </tr>
                         </tbody>

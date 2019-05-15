@@ -10,10 +10,10 @@
             <div class='container-fluid'>
                 <ul class='nav navbar-nav'>
                     <li><a [routerLink]="['/AdminDashboard']">Home</a></li>
-                    <li><a [routerLink]="['/Car']">Add Car</a></li>
+                    <li><a [routerLink]="['/Car']">Додати авто</a></li>
                     <li><a [routerLink]="['/UploadCarPhoto']">Upload Car Photo</a></li>
-                    <li><a [routerLink]="['/AllCar']">ShowAll Car</a></li>
-                    <li><a [routerLink]="['/AdminLogout']">Logout</a></li>
+                    <li><a [routerLink]="['/AllCar']">Показати всі авто</a></li>
+                    <li><a [routerLink]="['/AdminLogout']">Вийти</a></li>
                 </ul>
             </div>
         </nav>
@@ -24,11 +24,11 @@
                     <form #f="ngForm" novalidate (ngSubmit)="onSubmit()">
                         <div class="row">
                             <div class="col-md-4">
-                                <label for="name">Model Name</label>
+                                <label for="name">Модель</label>
                                 <select required name="Car"
                                         #refCar="ngModel"
                                         class="form-control" [(ngModel)]="selectedCar">
-                                    <option value="undefined">Please select Value</option>
+                                    <option value="undefined">Будь ласка, введіть значення</option>
                                     <option *ngFor="let car of CarData"
                                             [ngValue]="car.C_Id">
                                         {{car.Model_Name}}
@@ -37,7 +37,7 @@
                                 <div *ngIf="!refCar.valid  && (refCar.dirty || refCar.touched)"
                                      class="alert alert-danger">
                                     <div [hidden]="!refCar.errors.required">
-                                        Required
+                                        Необхідно вказати модель!
                                     </div>
                                 </div>
                             </div>
