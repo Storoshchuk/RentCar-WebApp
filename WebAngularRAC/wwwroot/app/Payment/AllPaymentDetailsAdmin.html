@@ -29,10 +29,10 @@
                                    [showInfo]="true">
                         </dxo-pager>
 
-                        <dxi-column sortOrder="asc" dataField="Carname"></dxi-column>
-                        <dxi-column sortOrder="asc" dataField="BankName"></dxi-column>
-                        <dxi-column sortOrder="asc" dataField="PaymentDate"></dxi-column>
-                        <dxi-column [width]="100" dataField="Amount"></dxi-column>
+                        <dxi-column caption="Назва авто" sortOrder="asc" dataField="Carname"></dxi-column>
+                        <dxi-column caption="Банк" sortOrder="asc" dataField="BankName"></dxi-column>
+                        <dxi-column caption="Дата оплати" sortOrder="asc" dataField="PaymentDate"></dxi-column>
+                        <dxi-column caption="Сума оплати" [width]="100" dataField="Amount"></dxi-column>
                         <dxi-column caption="Payed On" dataField="CreatedOn"></dxi-column>
                     </dx-data-grid>
 

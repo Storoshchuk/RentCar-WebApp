@@ -32,7 +32,7 @@
                                 <td>{{book.S_address}}</td>
                                 <td>{{book.D_address}}</td>
                                 <td>
-                                    <input class="btn btn-danger" value="Delete Booking" type="button" (click)="Delete(book.BookingID)" />
+                                    <input class="btn btn-danger" value="Скасувати бронювання" type="button" (click)="Delete(book.BookingID)" />
                                 </td>
                                 <td>
                                     <a class="btn btn-success" [routerLink]="['/Payment', book.BookingID]">Провести оплату</a>

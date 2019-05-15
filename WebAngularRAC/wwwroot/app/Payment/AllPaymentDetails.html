@@ -29,12 +29,12 @@
                                    [showInfo]="true">
                         </dxo-pager>
 
-                        <dxi-column sortOrder="asc" dataField="Name"></dxi-column>
-                        <dxi-column sortOrder="asc" dataField="FromDate"></dxi-column>
-                        <dxi-column sortOrder="asc" dataField="ToDate"></dxi-column>
-                        <dxi-column dataField="Amount"></dxi-column>
-                        <dxi-column dataField="Status"></dxi-column>
-                        <dxi-column caption="Оплачено" dataType="date" dataField="CreatedOn"></dxi-column>
+                        <dxi-column caption="Клієнт" sortOrder="asc" dataField="Name"></dxi-column>
+                        <dxi-column caption="Бронювання з " sortOrder="asc" dataField="FromDate"></dxi-column>
+                        <dxi-column caption="Бронювання до" sortOrder="asc" dataField="ToDate"></dxi-column>
+                        <dxi-column caption="Сума оплати" dataField="Amount"></dxi-column>
+                        <dxi-column caption="Статус оплати" dataField="Status"></dxi-column>
+                        <dxi-column caption="Дата оплати" dataType="date" dataField="CreatedOn"></dxi-column>
                     </dx-data-grid>
                 </div>
             </div>

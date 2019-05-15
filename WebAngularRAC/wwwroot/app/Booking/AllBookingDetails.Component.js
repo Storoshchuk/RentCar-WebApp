@@ -24,7 +24,7 @@ var AllBookingDetails = (function () {
             .GetAllBookingDetails()
             .subscribe(function (data) { return _this.bookingmodel = data; }, function (error) {
             if (error) {
-                alert("An Error has occured please try again after some time !");
+                alert("Виникла помилка сервера, спробуйте пізніше !");
             }
         });
     };

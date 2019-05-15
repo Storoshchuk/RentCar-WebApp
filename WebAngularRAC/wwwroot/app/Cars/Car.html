@@ -9,8 +9,8 @@
 
             </div>
         </nav>
-        <div class="panel panel-default">
-            <div class="panel-heading">Додати нову машину</div>
+        <!--<div class="panel panel-default">-->
+            <!--<div class="panel-heading">Додати нову машину</div>-->
             <div class='panel-body'>
                 <form #f="ngForm" novalidate (ngSubmit)="onSubmit()">
                     <div class="row">
@@ -129,7 +129,7 @@
 
                     <div class="row">
                         <div class="col-md-4">
-                            <label for="name">Upload Photo</label>
+                            <label for="name">Завантажити фото</label>
                             <input type="file" class="form-control" required (change)="fileChange($event)" placeholder="Upload file" accept=".jpg,.jpeg,.png,.pdf,.doc,.docx">
                         </div>
                     </div>

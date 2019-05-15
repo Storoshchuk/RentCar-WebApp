@@ -5,7 +5,7 @@
                 <form #f="ngForm" novalidate (ngSubmit)="onSubmit()">
 
                     <div class="form-login">
-                        <h4>Welcome back</h4>
+                        <h4>Вітаємо!</h4>
                         <label for="name">Логін</label>
                         <input type="text" class="form-control"
                                name="Username"
@@ -39,13 +39,13 @@
 
                         <div class="wrapper">
                             <span class="group-btn">
-                                <button type="submit" [disabled]="!f.form.valid" class="btn btn-success">Submit</button>
+                                <button type="submit" [disabled]="!f.form.valid" class="btn btn-success">Підтвердити</button>
                             </span>
                         </div>
                         <br />
                         <div class="wrapper">
                             <span class="group-btn">
-                                <a class="btn btn-success" [routerLink]="['/UserRegistration']">Need a new Account Sign UP</a>
+                                <a class="btn btn-success" [routerLink]="['/UserRegistration']">Створення облікового запису</a>
                             </span>
                         </div>
                     </div>

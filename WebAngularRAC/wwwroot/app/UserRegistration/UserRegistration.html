@@ -11,12 +11,12 @@
                     <form #f="ngForm" novalidate (ngSubmit)="onSubmit()">
                         <div class="row">
                             <div class="col-md-4">
-                                <label for="name">Username</label>
+                                <label for="name">Ім'я користувача</label>
                                 <input type="text" class="form-control" name="Username" [(ngModel)]="UserMasterModel.Username" maxlength="50" (blur)="CheckUsernameExist()" #refUsername="ngModel" id="Username" required>
                                 <div *ngIf="!refUsername.valid  && (refUsername.dirty || refUsername.touched)"
                                      class="alert alert-danger">
                                     <div [hidden]="!refUsername.errors.required">
-                                        Username is required
+                                        Необхідно ввести ім'я!
                                     </div>
                                 </div>
                             </div>
@@ -35,7 +35,7 @@
                                 <div *ngIf="!refpassword.valid  && (refpassword.dirty || refpassword.touched)"
                                      class="alert alert-danger">
                                     <div [hidden]="!refpassword.errors.required">
-                                        Password is required
+                                        Необхідно ввести пароль!
                                     </div>
                                 </div>
                             </div>
@@ -114,9 +114,9 @@
 
                         <div class="row">
                             <div style="margin-top:10px;" class="col-md-4">
-                                <button type="submit" [disabled]="!f.form.valid" class="btn btn-success">Submit</button>
+                                <button type="submit" [disabled]="!f.form.valid" class="btn btn-success">Підтвердити</button>
                                 <span style="display:inline-flex; float: right">
-                                    <span style="padding-top: 5px; color: white">Already Registered? </span><a class="btn btn-success" style="align-content:center" [routerLink]="['/Login']">Login here..</a>
+                                    <span style="padding-top: 5px; color: white">Вже зареєстровані? </span><a class="btn btn-success" style="align-content:center" [routerLink]="['/Login']">Увійти</a>
                                 </span>
                             </div>
                         </div>

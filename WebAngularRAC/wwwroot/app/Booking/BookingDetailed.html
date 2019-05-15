@@ -33,7 +33,7 @@
                             <select required name="C_Id"
                                     #refCar="ngModel"
                                     class="form-control" [(ngModel)]="selectedCar">
-                                <option value="undefined">Please select Value</option>
+                                <option value="undefined">Введіть значення</option>
                                 <option *ngFor="let car of CarData"
                                         [ngValue]="car.C_Id">
                                     {{car.Model_Name}}
@@ -53,14 +53,14 @@
                             <div *ngIf="!refEmail_Id.valid  && (refEmail_Id.dirty || refEmail_Id.touched)"
                                  class="alert alert-danger">
                                 <div [hidden]="!refEmail_Id.errors.required">
-                                    Потрібно вказати електронну адресу у форматі <i>dtoroshchuk@gmail.com</i>.
+                                    Потрібно вказати електронну адресу у форматі <i>exx@ex.ex</i>.
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4">
-                            <label for="name">З дати</label>
+                            <label for="name">Бронювання з</label>
                             <input [(ngModel)]="bookingmodel.FromDate" #refFromDate="ngModel" ng2-datetime-picker class="form-control" name="FromDate" required
                                    date-format="YYYY-MM-DD HH:MM"
                                    year="2014"
@@ -74,13 +74,13 @@
                             <div *ngIf="!refFromDate.valid  && (refFromDate.dirty || refFromDate.touched)"
                                  class="alert alert-danger">
                                 <div [hidden]="!refFromDate.errors.required">
-                                    Необхідно вказати дату ????
+                                    Необхідно вказати дату отримання авто
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-md-4">
-                            <label for="name">До дати</label>
+                            <label for="name">Бронювання до</label>
                             <input [(ngModel)]="bookingmodel.ToDate" #refToDate="ngModel" ng2-datetime-picker class="form-control" name="ToDate" required
                                    date-format="YYYY-MM-DD HH:MM"
                                    year="2014"
@@ -95,7 +95,7 @@
                             <div *ngIf="!refToDate.valid  && (refToDate.dirty || refToDate.touched)"
                                  class="alert alert-danger">
                                 <div [hidden]="!refToDate.errors.required">
-                                    To Date is required
+                                    Необхідно вказати дату повернення авто
                                 </div>
                             </div>
                         </div>
@@ -140,7 +140,7 @@
 
                     <div class="row">
                         <div style="margin-top:10px;" class="col-md-4">
-                            <button type="submit" [disabled]="!f.form.valid" class="btn btn-success">Book Ride</button>
+                            <button type="submit" [disabled]="!f.form.valid" class="btn btn-success">Забронювати</button>
                         </div>
                     </div>
                 </form>

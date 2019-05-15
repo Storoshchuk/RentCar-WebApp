@@ -34,7 +34,7 @@ export class AdminBookingViewComponent
             {
                 if (error)
                 {
-                    alert("An Error has occured please try again after some time !");
+                    alert("Виникла помилка сервера, спробуйте пізніше !");
                 }
             });
     }
@@ -42,7 +42,7 @@ export class AdminBookingViewComponent
 
     Delete(BookingID: string)
     {
-        if (confirm("Are you sure to delete booking ?"))
+        if (confirm("Ви дійсно бажаєте видалити бронювання ?"))
         {
             this._bookingservice.DeletingBooking(BookingID)
                 .subscribe(data => {
@@ -52,7 +52,7 @@ export class AdminBookingViewComponent
                 },
                 error => {
                     if (error) {
-                        alert("An Error has occured please try again after some time !");
+                        alert("Виникла помилка сервера, спробуйте пізніше !");
                     }
                 });
         }

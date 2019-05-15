@@ -37,7 +37,7 @@ export class BookingDetailedComponent implements OnInit {
             },
             error => {
                 if (error) {
-                    alert("An Error has occured please try again after some time !");
+                    alert("Виникла помилка сервера, спробуйте пізніше !");
                 }
             });
 
@@ -53,7 +53,7 @@ export class BookingDetailedComponent implements OnInit {
             },
             error => {
                 if (error) {
-                    alert("An Error has occured please try again after some time !");
+                    alert("Виникла помилка сервера, спробуйте пізніше !");
                 }
             });
 
@@ -81,7 +81,7 @@ export class BookingDetailedComponent implements OnInit {
         if (diffDays < 1 && seconds < 60) {
             this.bookingmodel.FromDate = "";
             this.bookingmodel.ToDate = "";
-            alert("Invalid Date for Booking Car / Cannot Book Car Less then an hour");
+            alert("Неправильна дата та час / Не можливо забронювати машину якщо залишилось менше ніж година до виїзду");
         }
     }
 

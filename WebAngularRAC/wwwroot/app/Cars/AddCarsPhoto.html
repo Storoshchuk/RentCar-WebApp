@@ -11,14 +11,14 @@
                 <ul class='nav navbar-nav'>
                     <li><a [routerLink]="['/AdminDashboard']">Home</a></li>
                     <li><a [routerLink]="['/Car']">Додати авто</a></li>
-                    <li><a [routerLink]="['/UploadCarPhoto']">Upload Car Photo</a></li>
+                    <li><a [routerLink]="['/UploadCarPhoto']">Завантажити зображення авто</a></li>
                     <li><a [routerLink]="['/AllCar']">Показати всі авто</a></li>
                     <li><a [routerLink]="['/AdminLogout']">Вийти</a></li>
                 </ul>
             </div>
         </nav>
         <div class="panel panel-default">
-            <div class="panel-heading">Upload Cars Photo</div>
+            <div class="panel-heading">Додати зображення авто</div>
             <div class='panel-body'>
                
                     <form #f="ngForm" novalidate (ngSubmit)="onSubmit()">
@@ -46,7 +46,7 @@
 
                         <div class="row">
                             <div class="col-md-4">
-                                <label for="name">Upload Photo</label>
+                                <label for="name">Завантажити фото</label>
                                 <input type="file" class="form-control" required (change)="fileChange($event)" placeholder="Upload file" accept=".jpg,.jpeg,.png,.pdf,.doc,.docx">
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <br />
-                                <button type="submit" [disabled]="!f.form.valid" class="btn btn-success">Upload Photos</button>
+                                <button type="submit" [disabled]="!f.form.valid" class="btn btn-success">Завантажити фото</button>
                             </div>
                         </div>
                     </form>

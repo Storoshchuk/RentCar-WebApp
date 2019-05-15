@@ -12,17 +12,17 @@
 
         <!--<div class="panel panel-default">-->
             <div class="panel-heading" style="background-color: antiquewhite;">
-                <input type="text" [(ngModel)]="searchStr" placeholder="Find car...">
+                <input type="text" [(ngModel)]="searchStr" placeholder="Знайти авто...">
             </div>
             <div class="panel-body" style="margin-left: 30px">      
                     <div class="row">
                             <div class="col-sm-4" style="margin-top:20px" *ngFor="let c of CarData | search:searchStr">
-                                <div class="card bg-success" style="width:300px; border-radius: 10px">
+                                <div class="card bg-warning" style="width:300px; border-radius: 10px">
                                     <img class="card-img-top" title="{{c.Model_Name}}" style="width:300px; height: 200px; border-top-left-radius: 10px; border-top-right-radius: 10px;" src="{{c.Image}}" alt="Car image">
                                     <div class="card-body">
                                         <h4 class="card-title">{{c.Model_Name}}</h4>
                                         <p class="card-text">{{c.Price}}</p>
-                                        <a routerLink="/BookingDetailed/{{c.C_Id}}" class="btn btn-success">Book</a>
+                                        <a routerLink="/BookingDetailed/{{c.C_Id}}" class="btn btn-warning">Забронювати</a>
                                     </div>
                                 </div>
                             </div>

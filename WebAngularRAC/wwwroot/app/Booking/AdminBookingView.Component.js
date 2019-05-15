@@ -8,11 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var AdminBookingView_Service_1 = require("../Booking/Services/AdminBookingView.Service");
 var router_1 = require("@angular/router");
 var ng2_progressbar_1 = require("ng2-progressbar");
-var AdminBookingViewComponent = (function () {
+var AdminBookingViewComponent = /** @class */ (function () {
     function AdminBookingViewComponent(_bookingservice, pService, _Route) {
         this._bookingservice = _bookingservice;
         this.pService = pService;
@@ -28,13 +29,13 @@ var AdminBookingViewComponent = (function () {
             }
         }, function (error) {
             if (error) {
-                alert("An Error has occured please try again after some time !");
+                alert("Виникла помилка сервера, спробуйте пізніше !");
             }
         });
     };
     AdminBookingViewComponent.prototype.Delete = function (BookingID) {
         var _this = this;
-        if (confirm("Are you sure to delete booking ?")) {
+        if (confirm("Ви дійсно бажаєте видалити бронювання ?")) {
             this._bookingservice.DeletingBooking(BookingID)
                 .subscribe(function (data) {
                 if (data != null) {
@@ -42,19 +43,19 @@ var AdminBookingViewComponent = (function () {
                 }
             }, function (error) {
                 if (error) {
-                    alert("An Error has occured please try again after some time !");
+                    alert("Виникла помилка сервера, спробуйте пізніше !");
                 }
             });
         }
     };
+    AdminBookingViewComponent = __decorate([
+        core_1.Component({
+            templateUrl: 'app/Booking/AllAdminBookingDetails.html',
+            providers: [AdminBookingView_Service_1.AdminBookingViewService]
+        }),
+        __metadata("design:paramtypes", [AdminBookingView_Service_1.AdminBookingViewService, ng2_progressbar_1.NgProgressService, router_1.Router])
+    ], AdminBookingViewComponent);
     return AdminBookingViewComponent;
 }());
-AdminBookingViewComponent = __decorate([
-    core_1.Component({
-        templateUrl: 'app/Booking/AllAdminBookingDetails.html',
-        providers: [AdminBookingView_Service_1.AdminBookingViewService]
-    }),
-    __metadata("design:paramtypes", [AdminBookingView_Service_1.AdminBookingViewService, ng2_progressbar_1.NgProgressService, router_1.Router])
-], AdminBookingViewComponent);
 exports.AdminBookingViewComponent = AdminBookingViewComponent;
 //# sourceMappingURL=AdminBookingView.Component.js.map

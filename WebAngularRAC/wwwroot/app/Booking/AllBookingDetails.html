@@ -20,23 +20,23 @@
                                   >
                         <dxo-search-panel [visible]="true"
                                           [width]="300"
-                                          placeholder="Search..."></dxo-search-panel>
+                                          placeholder="Пошук..."></dxo-search-panel>
                         <dxo-paging [pageSize]="10"></dxo-paging>
                         <dxo-pager [showPageSizeSelector]="true"
                                    [allowedPageSizes]="[5, 10, 20]"
                                    [showInfo]="true">
                         </dxo-pager>
 
-                        <dxi-column sortOrder="asc" dataField="Name"></dxi-column>
-                        <dxi-column [width]="150" sortOrder="asc" dataField="FromDate"></dxi-column>
-                        <dxi-column [width]="150" sortOrder="asc" dataField="ToDate"></dxi-column>
-                        <dxi-column caption="Адреса виїзду" dataField="S_address"></dxi-column>
-                        <dxi-column caption="Адреса призначення" dataField="D_address"></dxi-column>
-                        <dxi-column dataField="Carname"></dxi-column>
-                        <dxi-column dataField="ModelName"></dxi-column>
-                        <dxi-column dataField="Status"></dxi-column>
-                        <dxi-column [width]="80" dataField="Amount"></dxi-column>
-                        <dxi-column [width]="100" caption="Заброньовано" dataType="date" dataField="CreatedOn"></dxi-column>
+                        <dxi-column caption="Клієнт" sortOrder="asc" dataField="Name"></dxi-column>
+                        <dxi-column caption="Бронювання з" [width]="130" sortOrder="asc" dataField="FromDate"></dxi-column>
+                        <dxi-column caption="Бронювання до" [width]="140" sortOrder="asc" dataField="ToDate"></dxi-column>
+                        <dxi-column caption="Адреса виїзду" [width]="120" dataField="S_address"></dxi-column>
+                        <dxi-column caption="Адреса призначення" [width]="150" dataField="D_address"></dxi-column>
+                        <dxi-column caption="Бренд" dataField="Carname"></dxi-column>
+                        <dxi-column caption="Модель" dataField="ModelName"></dxi-column>
+                        <dxi-column caption="Статус" [width]="100" dataField="Status"></dxi-column>
+                        <dxi-column caption="Ціна" [width]="80" dataField="Amount"></dxi-column>
+                        <dxi-column caption="Створено " [width]="100" dataType="date" dataField="CreatedOn"></dxi-column>
 
                     </dx-data-grid>
 
