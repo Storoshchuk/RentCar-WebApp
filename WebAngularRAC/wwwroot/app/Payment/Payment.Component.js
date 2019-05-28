@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var Payment_Service_1 = require("../Payment/Service/Payment.Service");
 var Booking_Service_1 = require("../Booking/Services/Booking.Service");
@@ -15,7 +16,7 @@ var router_1 = require("@angular/router");
 var BookingModel_1 = require("../Booking/BookingModel");
 var Bank_Service_1 = require("../Bank/Services/Bank.Service");
 var Payment_Model_1 = require("../Payment/Payment.Model");
-var PaymentComponent = (function () {
+var PaymentComponent = /** @class */ (function () {
     function PaymentComponent(_paymentservice, _routeParams, _bankservice, _bookingservice, _route) {
         this._paymentservice = _paymentservice;
         this._routeParams = _routeParams;
@@ -77,18 +78,18 @@ var PaymentComponent = (function () {
             }
         });
     };
+    PaymentComponent = __decorate([
+        core_1.Component({
+            templateUrl: 'app/Payment/Payment.html',
+            providers: [Payment_Service_1.PaymentService, Booking_Service_1.BookingService, Bank_Service_1.BankService]
+        }),
+        __metadata("design:paramtypes", [Payment_Service_1.PaymentService,
+            router_1.ActivatedRoute,
+            Bank_Service_1.BankService,
+            Booking_Service_1.BookingService,
+            router_1.Router])
+    ], PaymentComponent);
     return PaymentComponent;
 }());
-PaymentComponent = __decorate([
-    core_1.Component({
-        templateUrl: 'app/Payment/Payment.html',
-        providers: [Payment_Service_1.PaymentService, Booking_Service_1.BookingService, Bank_Service_1.BankService]
-    }),
-    __metadata("design:paramtypes", [Payment_Service_1.PaymentService,
-        router_1.ActivatedRoute,
-        Bank_Service_1.BankService,
-        Booking_Service_1.BookingService,
-        router_1.Router])
-], PaymentComponent);
 exports.PaymentComponent = PaymentComponent;
 //# sourceMappingURL=Payment.Component.js.map

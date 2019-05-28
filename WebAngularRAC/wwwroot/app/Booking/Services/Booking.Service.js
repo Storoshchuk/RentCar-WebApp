@@ -8,13 +8,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var http_1 = require("@angular/http");
 require("rxjs/add/operator/map");
 require("rxjs/add/operator/catch");
 require("rxjs/add/observable/throw");
-var BookingService = (function () {
+var BookingService = /** @class */ (function () {
     function BookingService(_http, _Route) {
         var _this = this;
         this._http = _http;
@@ -147,11 +148,11 @@ var BookingService = (function () {
         }
         return this._Route.navigate(['Login']);
     };
+    BookingService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.Http, router_1.Router])
+    ], BookingService);
     return BookingService;
 }());
-BookingService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http, router_1.Router])
-], BookingService);
 exports.BookingService = BookingService;
 //# sourceMappingURL=Booking.Service.js.map

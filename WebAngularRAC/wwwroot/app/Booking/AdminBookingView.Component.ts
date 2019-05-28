@@ -46,9 +46,18 @@ export class AdminBookingViewComponent
         {
             this._bookingservice.DeletingBooking(BookingID)
                 .subscribe(data => {
-                    if (data != null) {
-                        this.bookingmodel = <BookingModel[]>data;
-                    }
+                    this._bookingservice
+                        .GetAllBooking()
+                        .subscribe(data => {
+                            if (data != null) {
+                                this.bookingmodel = data;
+                            }
+                        },
+                            error => {
+                                if (error) {
+                                    alert("Виникла помилка сервера, спробуйте пізніше !");
+                                }
+                            });
                 },
                 error => {
                     if (error) {

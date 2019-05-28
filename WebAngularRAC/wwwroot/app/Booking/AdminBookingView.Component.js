@@ -38,9 +38,17 @@ var AdminBookingViewComponent = /** @class */ (function () {
         if (confirm("Ви дійсно бажаєте видалити бронювання ?")) {
             this._bookingservice.DeletingBooking(BookingID)
                 .subscribe(function (data) {
-                if (data != null) {
-                    _this.bookingmodel = data;
-                }
+                _this._bookingservice
+                    .GetAllBooking()
+                    .subscribe(function (data) {
+                    if (data != null) {
+                        _this.bookingmodel = data;
+                    }
+                }, function (error) {
+                    if (error) {
+                        alert("Виникла помилка сервера, спробуйте пізніше !");
+                    }
+                });
             }, function (error) {
                 if (error) {
                     alert("Виникла помилка сервера, спробуйте пізніше !");

@@ -8,12 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var Booking_Service_1 = require("../Booking/Services/Booking.Service");
 var Payment_Service_1 = require("../Payment/Service/Payment.Service");
 var router_1 = require("@angular/router");
 var ng2_progressbar_1 = require("ng2-progressbar");
-var AllPaymentDetails = (function () {
+var AllPaymentDetails = /** @class */ (function () {
     function AllPaymentDetails(_bookingservice, _paymentservice, pService, _Route) {
         this._bookingservice = _bookingservice;
         this._paymentservice = _paymentservice;
@@ -30,18 +31,18 @@ var AllPaymentDetails = (function () {
             }
         }, function (error) {
             if (error) {
-                alert("An Error has occured please try again after some time !");
+                alert("Сталася помилка. Повторіть спробу через деякий час!");
             }
         });
     };
+    AllPaymentDetails = __decorate([
+        core_1.Component({
+            templateUrl: 'app/Payment/AllPaymentDetails.html',
+            providers: [Booking_Service_1.BookingService, Payment_Service_1.PaymentService]
+        }),
+        __metadata("design:paramtypes", [Booking_Service_1.BookingService, Payment_Service_1.PaymentService, ng2_progressbar_1.NgProgressService, router_1.Router])
+    ], AllPaymentDetails);
     return AllPaymentDetails;
 }());
-AllPaymentDetails = __decorate([
-    core_1.Component({
-        templateUrl: 'app/Payment/AllPaymentDetails.html',
-        providers: [Booking_Service_1.BookingService, Payment_Service_1.PaymentService]
-    }),
-    __metadata("design:paramtypes", [Booking_Service_1.BookingService, Payment_Service_1.PaymentService, ng2_progressbar_1.NgProgressService, router_1.Router])
-], AllPaymentDetails);
 exports.AllPaymentDetails = AllPaymentDetails;
 //# sourceMappingURL=AllPaymentDetails.Component.js.map

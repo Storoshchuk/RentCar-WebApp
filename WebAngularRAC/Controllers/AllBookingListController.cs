@@ -35,6 +35,7 @@ namespace WebAngularRAC.Controllers
                                          CreatedOn = book.CreatedOn,
                                          C_Id = book.C_Id,
                                          D_address = book.D_address,
+                                         S_address = book.S_address,
                                          Email_Id = book.Email_Id,
                                          FromDate = book.FromDate,
                                          ModelName = book.ModelName,

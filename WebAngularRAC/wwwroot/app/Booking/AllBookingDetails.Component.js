@@ -8,11 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var Booking_Service_1 = require("../Booking/Services/Booking.Service");
 var router_1 = require("@angular/router");
 var ng2_progressbar_1 = require("ng2-progressbar");
-var AllBookingDetails = (function () {
+var AllBookingDetails = /** @class */ (function () {
     function AllBookingDetails(_bookingservice, pService, _Route) {
         this._bookingservice = _bookingservice;
         this.pService = pService;
@@ -24,18 +25,18 @@ var AllBookingDetails = (function () {
             .GetAllBookingDetails()
             .subscribe(function (data) { return _this.bookingmodel = data; }, function (error) {
             if (error) {
-                alert("Виникла помилка сервера, спробуйте пізніше !");
+                alert("РЎС‚Р°Р»Р°СЃСЏ РїРѕРјРёР»РєР°. РџРѕРІС‚РѕСЂС–С‚СЊ СЃРїСЂРѕР±Сѓ С‡РµСЂРµР· РґРµСЏРєРёР№ С‡Р°СЃ!");
             }
         });
     };
+    AllBookingDetails = __decorate([
+        core_1.Component({
+            templateUrl: 'app/Booking/AllBookingDetails.html',
+            providers: [Booking_Service_1.BookingService]
+        }),
+        __metadata("design:paramtypes", [Booking_Service_1.BookingService, ng2_progressbar_1.NgProgressService, router_1.Router])
+    ], AllBookingDetails);
     return AllBookingDetails;
 }());
-AllBookingDetails = __decorate([
-    core_1.Component({
-        templateUrl: 'app/Booking/AllBookingDetails.html',
-        providers: [Booking_Service_1.BookingService]
-    }),
-    __metadata("design:paramtypes", [Booking_Service_1.BookingService, ng2_progressbar_1.NgProgressService, router_1.Router])
-], AllBookingDetails);
 exports.AllBookingDetails = AllBookingDetails;
 //# sourceMappingURL=AllBookingDetails.Component.js.map

@@ -13,13 +13,13 @@
 </div>
 
         <!--<div class="panel panel-default">-->
-<div class="panel-heading" style="background-color: antiquewhite; margin-left: 30px; height: 55px;">
+<div class="panel-heading" style="background-color: none; margin-left: 30px; height: 55px;">
     <input type="text" class="form-control" [(ngModel)]="searchStr" style="width: 250px; float: left; display: inline-flex" placeholder="Знайти авто...">
 
     <select [(ngModel)]="searchStr" class="form-control" style="width: 210px; float: right; display: inline-flex">
         <option value="" disabled selected>Оберіть тип палива...</option>
-        <option value="Petrol">Petrol</option>
-        <option value="Diesel">Diesel</option>
+        <option value="Petrol">Бензин</option>
+        <option value="Diesel">Дизель</option>
     </select>
 
     <select class="form-control" [(ngModel)]="searchStr" style="width: 210px; float: right; display: inline-flex">
@@ -49,7 +49,7 @@
                                         </ul>
 
                                         <p class="card-text" style="margin-left: 10px"><strong>Ціна: {{c.Price}} грн.</strong></p>
-                                        <a routerLink="/BookingDetailed/{{c.C_Id}}" class="btn btn-success" style="margin-left: 10px; margin-bottom: 10px">Забронювати</a>
+                                        <a routerLink="/BookingDetailed/{{c.C_Id}}" class="btn btn-warning" style="margin-left: 10px; margin-bottom: 10px">Забронювати</a>
                                     </div>
                                 </div>
                             </div>
