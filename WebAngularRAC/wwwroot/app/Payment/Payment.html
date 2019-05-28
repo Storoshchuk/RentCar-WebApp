@@ -33,19 +33,38 @@
                 </div>
                 <div class="row">
                     <div class="col-md-4">
-                        <label for="name">Name</label>
+                        <label for="name">Номер картки</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="name">Дійсна до:</label>
+                        <input type="date"  class="form-control"
+                               value="2019-05-01">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="name">CVV:</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="name">Користувач</label>
                         <input type="text" class="form-control" [disabled]="disabledtext" name="Name" [(ngModel)]="bookingmodel.Name" id="Name" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4">
-                        <label for="name">З дати</label>
+                        <label for="name">Бронювання з дати:</label>
                         <input type="text" class="form-control" [disabled]="disabledtext" name="FromDate" [(ngModel)]="bookingmodel.FromDate" id="FromDate" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4">
-                        <label for="name">До дати</label>
+                        <label for="name">Бронювання до дати:</label>
                         <input type="text" class="form-control" [disabled]="disabledtext" name="ToDate" [(ngModel)]="bookingmodel.ToDate" id="ToDate" required>
                     </div>
                 </div>
@@ -60,7 +79,11 @@
                 <div class="row">
                     <div style="margin-top:10px;" class="col-md-4">
                         <button type="submit" [disabled]="!f.form.valid" class="btn btn-danger">Провести оплату</button>
+                        <button [routerLink]="['/UserDashboard']" class="btn btn-info" style="float: right;">Оплатити пізніше</button>
+
                     </div>
                 </div>
+
+
             </form>
         </div>

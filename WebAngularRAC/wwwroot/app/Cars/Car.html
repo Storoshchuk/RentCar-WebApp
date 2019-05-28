@@ -129,17 +129,25 @@
 
                     <div class="row">
                         <div class="col-md-4">
+                            <label for="name">Коробка передач</label>
+                            <input type="text"
+                                   class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
                             <label for="name">Завантажити фото</label>
                             <input type="file" class="form-control" required (change)="fileChange($event)" placeholder="Upload file" accept=".jpg,.jpeg,.png,.pdf,.doc,.docx">
                         </div>
                     </div>
 
-                <div class="row">
-                    <div style="margin-top:10px;" class="col-md-4">
-                        <button type="submit" [disabled]="!f.form.valid" class="btn btn-success">Підтвердити</button>
+                    <div class="row">
+                        <div style="margin-top:10px;" class="col-md-4">
+                            <button type="submit" [disabled]="!f.form.valid" class="btn btn-success">Підтвердити</button>
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
 
         </div>
         <!--</div>

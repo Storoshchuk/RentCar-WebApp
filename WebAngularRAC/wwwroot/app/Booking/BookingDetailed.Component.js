@@ -16,14 +16,20 @@ var Booking_Service_1 = require("../Booking/Services/Booking.Service");
 var router_1 = require("@angular/router");
 var ng2_progressbar_1 = require("ng2-progressbar");
 var BookingDetailedComponent = /** @class */ (function () {
-    function BookingDetailedComponent(_bookingservice, pService, _Route) {
+    function BookingDetailedComponent(_bookingservice, pService, _Route, route) {
         this._bookingservice = _bookingservice;
         this.pService = pService;
         this._Route = _Route;
+        this.route = route;
         this.bookingmodel = new BookingModel_1.BookingModel();
+        this.slctdCar = "";
         this.username = "";
         this.data = JSON.parse(localStorage.getItem('currentUser'));
         this.username = this.data.username;
+        this.param = this.route.snapshot.params.ID;
+        //this.route.queryParams.subscribe(params => {
+        //    this.param = params['id'];
+        //});
     }
     BookingDetailedComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -32,6 +38,7 @@ var BookingDetailedComponent = /** @class */ (function () {
             .subscribe(function (data) {
             if (data != null) {
                 _this.CarData = data;
+                _this.slctdCar = data.find(function (obj) { return obj.C_Id === +_this.param; }).Model_Name;
             }
         }, function (error) {
             if (error) {
@@ -113,7 +120,7 @@ var BookingDetailedComponent = /** @class */ (function () {
             templateUrl: 'app/Booking/BookingDetailed.html',
             providers: [Car_Service_1.CarService, Booking_Service_1.BookingService]
         }),
-        __metadata("design:paramtypes", [Booking_Service_1.BookingService, ng2_progressbar_1.NgProgressService, router_1.Router])
+        __metadata("design:paramtypes", [Booking_Service_1.BookingService, ng2_progressbar_1.NgProgressService, router_1.Router, router_1.ActivatedRoute])
     ], BookingDetailedComponent);
     return BookingDetailedComponent;
 }());

@@ -11,14 +11,26 @@
                     <form #f="ngForm" novalidate (ngSubmit)="onSubmit()">
                         <div class="row">
                             <div class="col-md-4">
-                                <label for="name">Ім'я користувача</label>
+                                <label for="name">Логін</label>
                                 <input type="text" class="form-control" name="Username" [(ngModel)]="UserMasterModel.Username" maxlength="50" (blur)="CheckUsernameExist()" #refUsername="ngModel" id="Username" required>
                                 <div *ngIf="!refUsername.valid  && (refUsername.dirty || refUsername.touched)"
                                      class="alert alert-danger">
                                     <div [hidden]="!refUsername.errors.required">
-                                        Необхідно ввести ім'я!
+                                        Необхідно ввести логін!
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="name">Ім'я</label>
+                                <input type="text" class="form-control" name="Username1"  maxlength="50" id="Username1" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="name">Прізвище</label>
+                                <input type="text" class="form-control" name="Username2" maxlength="50" id="Username2" required>
                             </div>
                         </div>
 
@@ -79,7 +91,7 @@
                                 <div *ngIf="!refBirthdate.valid  && (refBirthdate.dirty || refBirthdate.touched)"
                                      class="alert alert-danger">
                                     <div [hidden]="!refBirthdate.errors.required">
-                                       Потрібно вказати дату народження!
+                                        Потрібно вказати дату народження!
                                     </div>
                                 </div>
                             </div>
