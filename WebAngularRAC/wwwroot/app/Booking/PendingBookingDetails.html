@@ -1,14 +1,16 @@
 ﻿
-    <div class="container">
-        <nav class='navbar navbar-inverse'>
-            <div class='container-fluid'>
-                <ul class='nav navbar-nav'>
-                    <li><a [routerLink]="['/UserDashboard']">Home</a></li>
-                    <li><a [routerLink]="['/UserLogout']">Вийти</a></li>
-                </ul>
+<div class="container">
+    <nav class='navbar navbar-inverse'>
+        <div class='container-fluid'>
+
+            <div style="margin-top: 10px">
+                <a [routerLink]="['/UserDashboard']">Home</a>
+                <p style="float: right; display: inline-flex"><a [routerLink]="['/UserLogout']">Вийти</a></p>
             </div>
-        </nav>
+
         </div>
+    </nav>
+</div>
             <div class='panel-body'>          
                 <div class='table-responsive'>
                     <table class="table table-hover" >

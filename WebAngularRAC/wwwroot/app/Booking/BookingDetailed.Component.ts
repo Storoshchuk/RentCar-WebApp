@@ -3,7 +3,7 @@ import { BookingModel } from '../Booking/BookingModel';
 import { CarService } from '../Cars/Services/Car.Service';
 import { BookingService } from '../Booking/Services/Booking.Service';
 import { CarModel } from '../Cars/Car.Model';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { NgProgressService } from "ng2-progressbar";
 @Component({
     templateUrl: 'app/Booking/BookingDetailed.html',
@@ -15,13 +15,22 @@ export class BookingDetailedComponent implements OnInit {
     CarData: CarModel[];
     selectedCar: number;
 
+    slctdCar: string = "";
+    param: number;
+
     private username: string = "";
     private data: any;
     private responsedata: any;
 
-    constructor(private _bookingservice: BookingService, private pService: NgProgressService, private _Route: Router) {
+    constructor(private _bookingservice: BookingService, private pService: NgProgressService, private _Route: Router, private route: ActivatedRoute) {
         this.data = JSON.parse(localStorage.getItem('currentUser'));
         this.username = this.data.username
+
+        this.param = this.route.snapshot.params.ID;
+
+        //this.route.queryParams.subscribe(params => {
+        //    this.param = params['id'];
+        //});
 
     }
 
@@ -33,6 +42,8 @@ export class BookingDetailedComponent implements OnInit {
             data => {
                 if (data != null) {
                     this.CarData = data;
+
+                    this.slctdCar = data.find((obj: CarModel) => obj.C_Id === +this.param).Model_Name;
                 }
             },
             error => {

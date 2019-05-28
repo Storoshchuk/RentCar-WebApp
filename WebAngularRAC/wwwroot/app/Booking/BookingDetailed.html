@@ -18,7 +18,7 @@
                     <div class="row">
                         
                         <div class="col-md-4">
-                            <label for="name">Ім'я замовника</label>
+                            <label for="name">Логін користувача</label>
                             <input type="text" class="form-control" [disabled]="true" name="Name" [(ngModel)]="bookingmodel.Name" #refName="ngModel" id="Name" required>
                             <div *ngIf="!refName.valid  && (refName.dirty || refName.touched)"
                                  class="alert alert-danger">
@@ -30,21 +30,7 @@
 
                         <div class="col-md-4">
                             <label for="name">Модель</label>
-                            <select required name="C_Id"
-                                    #refCar="ngModel"
-                                    class="form-control" [(ngModel)]="selectedCar">
-                                <option value="undefined">Введіть значення</option>
-                                <option *ngFor="let car of CarData"
-                                        [ngValue]="car.C_Id">
-                                    {{car.Model_Name}}
-                                </option>
-                            </select>
-                            <div *ngIf="!refCar.valid  && (refCar.dirty || refCar.touched)"
-                                 class="alert alert-danger">
-                                <div [hidden]="!refCar.errors.required">
-                                    Необхідно вказати модель!
-                                </div>
-                            </div>
+                            <input type="text" disabled class="form-control" name="C_Id" [(ngModel)]="slctdCar"required>
                         </div>
 
                         <div class="col-md-4">
