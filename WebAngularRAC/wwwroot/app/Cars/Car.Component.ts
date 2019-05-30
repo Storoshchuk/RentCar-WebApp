@@ -83,7 +83,7 @@ export class CarComponent {
                     (
                     data => {
                         if (data == true) {
-                            alert("Photo Uploaded Successfully ");
+                            alert("Фото успішно завантажено ");
                             this._Route.navigate(['AllCar']);
                         }
                         else {

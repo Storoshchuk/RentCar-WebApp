@@ -30,7 +30,7 @@ export class DeleteBooking {
             },
             error => {
                 if (error) {
-                    alert("An Error has occured please try again after some time !");
+                    alert("Виникла помилка сервера, спробуйте пізніше !");
                 }
             });
 
@@ -43,7 +43,7 @@ export class DeleteBooking {
     }
 
     onSubmit() {
-        if (confirm("Are you sure to delete booking ?")) {
+        if (confirm("Ви дійсно бажаєте видалити бронювання ?")) {
             this._bookingservice.DeletingBooking(this.ID)
                 .subscribe(data => {
                     if (data != null) {
@@ -52,7 +52,7 @@ export class DeleteBooking {
                 },
                 error => {
                     if (error) {
-                        alert("An Error has occured please try again after some time !");
+                        alert("Виникла помилка сервера, спробуйте пізніше !");
                     }
                 });
         }

@@ -73,7 +73,7 @@ var BookingDetailedComponent = /** @class */ (function () {
         if (diffDays < 1 && seconds < 60) {
             this.bookingmodel.FromDate = "";
             this.bookingmodel.ToDate = "";
-            alert("Неправильна дата та час / Не можливо забронювати машину якщо залишилось менше ніж година до виїзду");
+            alert("Неправильна дата та час/Не можливо забронювати машину,якщо залишилось менше ніж година до виїзду");
         }
     };
     BookingDetailedComponent.prototype.onSubmit = function () {
@@ -93,25 +93,25 @@ var BookingDetailedComponent = /** @class */ (function () {
         this._bookingservice.Book(formdata).subscribe(function (data) {
             _this.responsedata = data;
             if (_this.responsedata == "Invalid") {
-                alert("Session Expired");
+                alert("Сеанс завершений!");
                 _this._Route.navigate(['Login']);
             }
             else if (_this.responsedata.data == "AlreadyBooked") {
-                alert("Car Slot is Already Booked");
+                alert("Дане авто вже заброньоване!");
             }
             else if (_this.responsedata.data == "InvalidTime") {
-                alert("Choose Valid Dates");
+                alert("Виберіть дійсну дату!");
             }
             else if (_this.responsedata.data == "Invalidbooktime") {
-                alert("Choose Valid Dates");
+                alert("Виберіть дійсну дату!");
             }
             else {
-                alert("Booking Done Successfully ");
+                alert("Бронювання здійснене успішно! ");
                 _this._Route.navigate(['Payment', _this.responsedata.data]);
             }
         }, function (error) {
             if (error) {
-                alert("An Error has occured please try again after some time !");
+                alert("Виникла помилка сервера, спробуйте пізніше !");
             }
         });
     };

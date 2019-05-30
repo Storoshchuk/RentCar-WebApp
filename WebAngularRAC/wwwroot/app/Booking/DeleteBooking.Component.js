@@ -32,7 +32,7 @@ var DeleteBooking = /** @class */ (function () {
             }
         }, function (error) {
             if (error) {
-                alert("An Error has occured please try again after some time !");
+                alert("Виникла помилка сервера, спробуйте пізніше !");
             }
         });
         this._carservice
@@ -41,7 +41,7 @@ var DeleteBooking = /** @class */ (function () {
     };
     DeleteBooking.prototype.onSubmit = function () {
         var _this = this;
-        if (confirm("Are you sure to delete booking ?")) {
+        if (confirm("Ви дійсно бажаєте видалити бронювання ?")) {
             this._bookingservice.DeletingBooking(this.ID)
                 .subscribe(function (data) {
                 if (data != null) {
@@ -49,7 +49,7 @@ var DeleteBooking = /** @class */ (function () {
                 }
             }, function (error) {
                 if (error) {
-                    alert("An Error has occured please try again after some time !");
+                    alert("Виникла помилка сервера, спробуйте пізніше !");
                 }
             });
         }

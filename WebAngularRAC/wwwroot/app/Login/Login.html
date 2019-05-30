@@ -14,7 +14,8 @@
                                id="Username"
                                required>
                         <div *ngIf="!refUsername.valid  && (refUsername.dirty || refUsername.touched)"
-                             class="alert alert-danger">
+                             class="
+                             alert-danger">
                             <div [hidden]="!refUsername.errors.required">
                                 Потрібно вказати логін!
                             </div>
@@ -39,13 +40,13 @@
 
                         <div class="wrapper">
                             <span class="group-btn">
-                                <button type="submit" [disabled]="!f.form.valid" class="btn btn-success">Підтвердити</button>
+                                <button type="submit" [disabled]="!f.form.valid" class="btn btn-warning">Підтвердити</button>
                             </span>
                         </div>
                         <br />
                         <div class="wrapper">
                             <span class="group-btn">
-                                <a class="btn btn-success" [routerLink]="['/UserRegistration']">Створення облікового запису</a>
+                                <a class="btn btn-warning" [routerLink]="['/UserRegistration']">Створення облікового запису</a>
                             </span>
                         </div>
                     </div>

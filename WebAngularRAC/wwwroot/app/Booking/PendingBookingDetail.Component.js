@@ -29,25 +29,25 @@ var PendingBookingComponent = /** @class */ (function () {
             }
         }, function (error) {
             if (error) {
-                alert("An Error has occured please try again after some time !");
+                alert("Виникла помилка сервера, спробуйте пізніше !");
             }
         });
     };
     PendingBookingComponent.prototype.Delete = function (ID) {
         var _this = this;
-        if (confirm("Are you sure to delete booking ?")) {
+        if (confirm("Ви впевнені, що хочете скасувати бронювання?")) {
             this._bookingservice.DeletingBooking(ID)
                 .subscribe(function (data) {
                 if (data == true) {
-                    alert("Your booking done successfully ");
+                    alert("Бронювання скасовано успішно!");
                     _this._Route.navigate(['AllBookingDetails']);
                 }
                 else {
-                    alert("An Error has occured please try again after some time !");
+                    alert("Виникла помилка сервера, спробуйте пізніше !");
                 }
             }, function (error) {
                 if (error) {
-                    alert("An Error has occured please try again after some time !");
+                    alert("Виникла помилка сервера, спробуйте пізніше !");
                 }
             });
         }

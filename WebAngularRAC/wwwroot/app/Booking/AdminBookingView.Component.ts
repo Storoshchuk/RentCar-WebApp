@@ -61,7 +61,11 @@ export class AdminBookingViewComponent
                 },
                 error => {
                     if (error) {
-                        alert("Виникла помилка сервера, спробуйте пізніше !");
+                        
+
+
+
+("Виникла помилка сервера, спробуйте пізніше !");
                     }
                 });
         }

@@ -92,7 +92,7 @@ export class BookingDetailedComponent implements OnInit {
         if (diffDays < 1 && seconds < 60) {
             this.bookingmodel.FromDate = "";
             this.bookingmodel.ToDate = "";
-            alert("Неправильна дата та час / Не можливо забронювати машину якщо залишилось менше ніж година до виїзду");
+            alert("Неправильна дата та час/Не можливо забронювати машину,якщо залишилось менше ніж година до виїзду");
         }
     }
 
@@ -115,26 +115,26 @@ export class BookingDetailedComponent implements OnInit {
                 this.responsedata = data;
 
                 if (this.responsedata == "Invalid") {
-                    alert("Session Expired");
+                    alert("Сеанс завершений!");
                     this._Route.navigate(['Login']);
                 }
                 else if (this.responsedata.data == "AlreadyBooked") {
-                    alert("Car Slot is Already Booked");
+                    alert("Дане авто вже заброньоване!");
                 }
                 else if (this.responsedata.data == "InvalidTime") {
-                    alert("Choose Valid Dates");
+                    alert("Виберіть дійсну дату!");
                 }
                 else if (this.responsedata.data == "Invalidbooktime") {
-                    alert("Choose Valid Dates");
+                    alert("Виберіть дійсну дату!");
                 }
                 else {
-                    alert("Booking Done Successfully ");
+                    alert("Бронювання здійснене успішно! ");
                     this._Route.navigate(['Payment', this.responsedata.data]);
                 }
             },
             error => {
                 if (error) {
-                    alert("An Error has occured please try again after some time !");
+                    alert("Виникла помилка сервера, спробуйте пізніше !");
                 }
             });
     }

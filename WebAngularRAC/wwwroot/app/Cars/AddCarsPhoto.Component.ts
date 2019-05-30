@@ -73,7 +73,7 @@ export class AddCarPhotoComponent implements OnInit {
                     data => {
                         if (data == true)
                         {
-                            alert("Photo Uploaded Successfully ");
+                            alert("Фото успішно завантажено!");
                             this._Route.navigate(['AllCar']);
                         }
                         else

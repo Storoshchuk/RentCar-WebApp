@@ -31,16 +31,16 @@ export class LoginComponent {
                 this.webresponse = data;
 
                 if (this.webresponse.UserTypeID == "0") {
-                    alert("Invalid Username and Password");
+                    alert("Не правильний логін або пароль!");
                     this._Route.navigate(['Login']);
                 }
                 else {
                     if (this.webresponse.UserTypeID == "2") {
-                        alert("Logged in Successfully");
+                        alert("Логування пройшло успішно");
                         this._Route.navigate(['UserDashboard']);
                     }
                     else {
-                        alert("Logged in Successfully");
+                        alert("Логування пройшло успішно");
                         this._Route.navigate(['AdminDashboard']);
                     }
                 }

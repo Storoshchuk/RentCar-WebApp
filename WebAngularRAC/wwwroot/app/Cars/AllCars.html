@@ -42,7 +42,7 @@
                             <td><img alt="" height="150px" [src]="CarDetails.Image" /></td>
                             <td>
                                 <a class="btn btn-success" [routerLink]="['/EditCar', CarDetails.C_Id]">Змінити</a>
-                                <a class="btn btn-warning" (click)="deleteCar(CarDetails.C_Id)">Видалити</a>
+                                <a class="btn btn-danger" (click)="deleteCar(CarDetails.C_Id)">Видалити</a>
                             </td>
                         </tr>
                     </tbody>

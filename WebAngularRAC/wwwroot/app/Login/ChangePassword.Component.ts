@@ -36,7 +36,7 @@ export class ChangePasswordComponent {
 
                     if (this.response)
                     {
-                        alert("Your Password has been changed Successfully");
+                        alert("Ваш пароль успішно змінений!");
                         this._Route.navigate(['UserDashboard']);
                     }
                     else {

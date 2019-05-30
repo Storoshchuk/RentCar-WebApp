@@ -8,12 +8,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var Login_Model_1 = require("../Login/Login.Model");
 var Login_Service_1 = require("../Login/Services/Login.Service");
 var ng2_progressbar_1 = require("ng2-progressbar");
 var router_1 = require("@angular/router");
-var LoginComponent = (function () {
+var LoginComponent = /** @class */ (function () {
     function LoginComponent(pService, _Route, _LoginService) {
         this.pService = pService;
         this._Route = _Route;
@@ -29,16 +30,16 @@ var LoginComponent = (function () {
         this._LoginService.validateLoginUser(this.LoginModel).subscribe(function (data) {
             _this.webresponse = data;
             if (_this.webresponse.UserTypeID == "0") {
-                alert("Invalid Username and Password");
+                alert("Не правильний логін або пароль!");
                 _this._Route.navigate(['Login']);
             }
             else {
                 if (_this.webresponse.UserTypeID == "2") {
-                    alert("Logged in Successfully");
+                    alert("Логування пройшло успішно");
                     _this._Route.navigate(['UserDashboard']);
                 }
                 else {
-                    alert("Logged in Successfully");
+                    alert("Логування пройшло успішно");
                     _this._Route.navigate(['AdminDashboard']);
                 }
             }
@@ -49,15 +50,15 @@ var LoginComponent = (function () {
         });
         this.pService.done();
     };
+    LoginComponent = __decorate([
+        core_1.Component({
+            templateUrl: 'app/Login/Login.html',
+            styleUrls: ['../../css/Login.css'],
+            providers: [Login_Service_1.LoginService]
+        }),
+        __metadata("design:paramtypes", [ng2_progressbar_1.NgProgressService, router_1.Router, Login_Service_1.LoginService])
+    ], LoginComponent);
     return LoginComponent;
 }());
-LoginComponent = __decorate([
-    core_1.Component({
-        templateUrl: 'app/Login/Login.html',
-        styleUrls: ['../../css/Login.css'],
-        providers: [Login_Service_1.LoginService]
-    }),
-    __metadata("design:paramtypes", [ng2_progressbar_1.NgProgressService, router_1.Router, Login_Service_1.LoginService])
-], LoginComponent);
 exports.LoginComponent = LoginComponent;
 //# sourceMappingURL=Login.Component.js.map

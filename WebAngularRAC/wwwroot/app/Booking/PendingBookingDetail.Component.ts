@@ -28,33 +28,33 @@ export class PendingBookingComponent {
             error =>
             {
                 if (error) {
-                    alert("An Error has occured please try again after some time !");
+                    alert("Виникла помилка сервера, спробуйте пізніше !");
                 }
             });
     }
 
     Delete(ID :any)
     {
-        if (confirm("Are you sure to delete booking ?"))
+        if (confirm("Ви впевнені, що хочете скасувати бронювання?"))
         {
             this._bookingservice.DeletingBooking(ID)
                 .subscribe(data =>
                 {
                     if (data == true)
                     {
-                        alert("Your booking done successfully ");
+                        alert("Бронювання скасовано успішно!");
                         this._Route.navigate(['AllBookingDetails']);
                     }
                     else
                     {
-                        alert("An Error has occured please try again after some time !");
+                        alert("Виникла помилка сервера, спробуйте пізніше !");
                     }
                 },
                 error =>
                 {
                     if (error)
                     {
-                        alert("An Error has occured please try again after some time !");
+                        alert("Виникла помилка сервера, спробуйте пізніше !");
                     }
                 });
         }

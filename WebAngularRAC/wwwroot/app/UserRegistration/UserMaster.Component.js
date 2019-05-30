@@ -35,7 +35,7 @@ var UserMasterComponent = (function () {
         formdata.Email = this.UserMasterModel.Email;
         this._UserRegistrationService.createUser(formdata).subscribe(function (data) {
             if (data == true) {
-                alert("Your Registration has done Successfully ");
+                alert("Реєстрація пройшла успішно!");
                 _this._Route.navigate(['Login']);
             }
             else {

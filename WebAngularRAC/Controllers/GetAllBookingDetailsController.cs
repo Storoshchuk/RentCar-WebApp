@@ -51,7 +51,7 @@ namespace WebAngularRAC.Controllers
                                          S_address = book.S_address,
                                          D_address = book.D_address,
                                          CreatedOn = book.CreatedOn,
-                                         Status = book.PaymentStatus == "D" ? "Completed" : "Unknown"
+                                         Status = book.PaymentStatus == "D" ? "Оплачено" : "Невідомо"
                                      }).ToList();
 
                 return ListofBooking.ToArray();

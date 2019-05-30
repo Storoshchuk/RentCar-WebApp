@@ -46,7 +46,7 @@ namespace WebAngularRAC.Controllers
                                          FromDate = book.FromDate,
                                          ToDate = book.ToDate,
                                          CreatedOn = book.CreatedOn,
-                                         Status = book.PaymentStatus == "D" ? "Completed" : "Unknown"
+                                         Status = book.PaymentStatus == "D" ? "Оплачено" : "Невідомо"
                                      }).ToList();
 
                 return ListofBooking.ToArray();

@@ -51,7 +51,7 @@ var AdminBookingViewComponent = /** @class */ (function () {
                 });
             }, function (error) {
                 if (error) {
-                    alert("Виникла помилка сервера, спробуйте пізніше !");
+                    ("Виникла помилка сервера, спробуйте пізніше !");
                 }
             });
         }

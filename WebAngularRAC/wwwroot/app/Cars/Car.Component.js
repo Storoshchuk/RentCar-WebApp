@@ -72,7 +72,7 @@ var CarComponent = /** @class */ (function () {
                 .map(function (res) { return res.json(); })
                 .subscribe(function (data) {
                 if (data == true) {
-                    alert("Photo Uploaded Successfully ");
+                    alert("Фото успішно завантажено ");
                     _this._Route.navigate(['AllCar']);
                 }
                 else {

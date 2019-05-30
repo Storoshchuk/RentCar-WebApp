@@ -43,7 +43,7 @@ export class UserMasterComponent {
             data => {
 
                 if (data == true) {
-                    alert("Your Registration has done Successfully ");
+                    alert("Реєстрація пройшла успішно!");
                     this._Route.navigate(['Login']);
                 }
                 else {
@@ -72,7 +72,7 @@ export class UserMasterComponent {
 
                     if (this.status == false) {
                         this.UserMasterModel.Username = "";
-                        alert("Username Already Exits");
+                        alert("Ім'я користувача вже існує!");
                     }
                     else {
 

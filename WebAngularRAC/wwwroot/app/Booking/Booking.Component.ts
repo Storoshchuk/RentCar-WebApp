@@ -33,7 +33,7 @@ export class BookingComponent implements OnInit {
             },
             error => {
                 if (error) {
-                    alert("An Error has occured please try again after some time !");
+                    alert("Виникла помилка сервера, спробуйте пізніше !");
                 }
             });
 
