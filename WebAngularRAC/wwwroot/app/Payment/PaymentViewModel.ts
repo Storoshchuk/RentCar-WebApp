@@ -5,5 +5,6 @@
     public Username: string = "";
     public BankName: string = "";
     public Carname: string = "";
+    public Brand: string = "";
     public PaymentDate: string = "";
 }

@@ -1,46 +1,46 @@
 ﻿    <div class="container">
-        <nav class='navbar navbar-inverse'>
-            <div class='container-fluid'>
-                <ul class='nav navbar-nav'>
-                    <li><a [routerLink]="['/AdminDashboard']">Home</a></li>
-                    <li><a [routerLink]="['/AdminLogout']">Вийти</a></li>
-                </ul>
+    <nav class='navbar navbar-inverse'>
+        <div class='container-fluid'>
+            <div style="margin-top: 10px;">
+                <a style="color: darkgrey;" [routerLink]="['/AdminDashboard']">Home</a>
+                <p style="float: right; display: inline-flex; margin-left: 15px"><a style="color: darkgrey;" [routerLink]="['/AdminLogout']">Вийти</a></p>
             </div>
-        </nav>
-        <div style="background-color: white; color:dimgray">
+        </div>
+    </nav>
+    <div style="background-color: white; color:dimgray">
 
-            <!-- class="panel panel-default" -->
-            <!--<div class="panel-heading">ALL BOOKING DETAILS</div>-->
-            <div class='panel-body'>
+        <!-- class="panel panel-default" -->
+        <!--<div class="panel-heading">ALL BOOKING DETAILS</div>-->
+        <div class='panel-body'>
 
-                <div class='table-responsive'>
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>Клієнт</th>
-                                <th>З дати</th>
-                                <th>До дати</th>
-                                <th>Адреса виїзду</th>
-                                <th>Адреса призначення</th>
-                                <th>Заброньовано від</th>
-                                <th>Скасовано</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor='let book of bookingmodel'>
-                                <td>{{book.Name}}</td>
-                                <td>{{book.FromDate}}</td>
-                                <td>{{book.ToDate}}</td>
-                                <td>{{book.S_address}}</td>
-                                <td>{{book.D_address}}</td>
-                                <td>{{book.CreatedOn}}</td>
-                                <td>
-                                    <input class="btn btn-danger" value="Видалити бронювання" type="button" (click)="Delete(book.BookingID)" />
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class='table-responsive'>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Клієнт</th>
+                            <th>З дати</th>
+                            <th>До дати</th>
+                            <th>Адреса виїзду</th>
+                            <th>Адреса призначення</th>
+                            <th>Заброньовано від</th>
+                            <th>Скасовано</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let book of bookingmodel'>
+                            <td>{{book.Name}}</td>
+                            <td>{{book.FromDate}}</td>
+                            <td>{{book.ToDate}}</td>
+                            <td>{{book.S_address}}</td>
+                            <td>{{book.D_address}}</td>
+                            <td>{{book.CreatedOn}}</td>
+                            <td>
+                                <input class="btn btn-danger" value="Видалити бронювання" type="button" (click)="Delete(book.BookingID)" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
+</div>

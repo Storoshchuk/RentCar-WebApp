@@ -1,14 +1,14 @@
 ﻿
-    <div class="container">
-        <nav class='navbar navbar-inverse'>
-            <div class='container-fluid'>
-                <ul class='nav navbar-nav'>
-                    <li><a [routerLink]="['/AdminDashboard']">Home</a></li>
-                    <li><a [routerLink]="['/UserLogout']">Вийти</a></li>
-                </ul>
+<div class="container">
+    <nav class='navbar navbar-inverse'>
+        <div class='container-fluid'>
+            <div style="margin-top: 10px;">
+                <a style="color: darkgrey;" [routerLink]="['/AdminDashboard']">Home</a>
+                <p style="float: right; display: inline-flex; margin-left: 15px"><a style="color: darkgrey;" [routerLink]="['/AdminLogout']">Вийти</a></p>
             </div>
-        </nav>
         </div>
+    </nav>
+</div>
         <br />
         <!--<div class="panel panel-default">
             <div class="panel-heading">ALL PAYMENT DETAILS</div>-->
@@ -29,11 +29,13 @@
                                    [showInfo]="true">
                         </dxo-pager>
 
-                        <dxi-column caption="Назва авто" sortOrder="asc" dataField="Carname"></dxi-column>
+                        <dxi-column caption="Клієнт" sortOrder="asc" dataField="Username"></dxi-column>
+                        <dxi-column caption="Марка авто" sortOrder="asc" dataField="Brand"></dxi-column>
+                        <dxi-column caption="Модель авто" sortOrder="asc" dataField="Carname"></dxi-column>
                         <dxi-column caption="Банк" sortOrder="asc" dataField="BankName"></dxi-column>
                         <dxi-column caption="Дата оплати" sortOrder="asc" dataField="PaymentDate"></dxi-column>
                         <dxi-column caption="Сума оплати" [width]="100" dataField="Amount"></dxi-column>
-                        <dxi-column caption="Payed On" dataField="CreatedOn"></dxi-column>
+                        <dxi-column caption="Платіж створено" dataField="CreatedOn"></dxi-column>
                     </dx-data-grid>
 
                 </div>

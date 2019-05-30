@@ -12,7 +12,7 @@ import { NgProgressService } from "ng2-progressbar";
 
 export class BookingDetailedComponent implements OnInit {
     bookingmodel: BookingModel = new BookingModel();
-    CarData: CarModel[];
+    CarData: CarModel[] = [];
     selectedCar: number;
 
     slctdCar: string = "";
@@ -106,7 +106,7 @@ export class BookingDetailedComponent implements OnInit {
         formdata.D_address = this.bookingmodel.D_address;
         formdata.Email_Id = this.bookingmodel.Email_Id;
         formdata.Contact_No = this.bookingmodel.Contact_No;
-        formdata.C_Id = this.selectedCar;
+        formdata.C_Id =  +this.param;
         formdata.Amount = 0;
         formdata.Username = this.username;
         this._bookingservice.Book(formdata).subscribe

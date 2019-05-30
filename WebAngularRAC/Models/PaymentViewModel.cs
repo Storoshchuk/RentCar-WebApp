@@ -14,7 +14,8 @@ namespace WebAngularRAC.Models
         public int BankID { get; set; }
         public string BankName { get; set; }
         public string Carname { get; set; }
-        public int UserID { get; set; }
+        public string Username { get; set; }
+        public string Brand { get; set; }
         public int BookingID { get; set; }
         public DateTime PaymentDate { get; set; }
         public DateTime CreatedOn { get; set; }

@@ -38,6 +38,7 @@ namespace WebAngularRAC.Controllers
                                          S_address = book.S_address,
                                          Email_Id = book.Email_Id,
                                          FromDate = book.FromDate,
+                                         ToDate = book.ToDate,
                                          ModelName = book.ModelName,
                                          Name = book.Name,
                                          PaymentStatus = book.PaymentStatus,

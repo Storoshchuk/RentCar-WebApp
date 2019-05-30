@@ -1,9 +1,11 @@
 "use strict";
-var PaymentViewModel = (function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+var PaymentViewModel = /** @class */ (function () {
     function PaymentViewModel() {
         this.Username = "";
         this.BankName = "";
         this.Carname = "";
+        this.Brand = "";
         this.PaymentDate = "";
     }
     return PaymentViewModel;

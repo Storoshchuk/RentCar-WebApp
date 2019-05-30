@@ -41,7 +41,9 @@ namespace WebAngularRAC.Controllers
                                          BankName = bank.BankName,
                                          Carname = car.Model_Name,
                                          PaymentDate = payment.PaymentDate,
-                                         CreatedOn = payment.CreatedOn
+                                         CreatedOn = payment.CreatedOn,
+                                        Username = book.Name,
+                                        Brand = car.Brand
                                      }).ToList();
 
 

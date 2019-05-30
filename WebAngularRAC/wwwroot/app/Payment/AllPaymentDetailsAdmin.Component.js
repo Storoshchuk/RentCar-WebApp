@@ -8,10 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var PaymentAdmin_Service_1 = require("../Payment/Service/PaymentAdmin.Service");
 var ng2_progressbar_1 = require("ng2-progressbar");
-var AllPaymentDetailsAdminComponent = (function () {
+var AllPaymentDetailsAdminComponent = /** @class */ (function () {
     function AllPaymentDetailsAdminComponent(_paymentservice, pService) {
         this._paymentservice = _paymentservice;
         this.pService = pService;
@@ -20,16 +21,20 @@ var AllPaymentDetailsAdminComponent = (function () {
         var _this = this;
         this._paymentservice
             .GetAllPayedandCanceledPayment()
-            .subscribe(function (data) { return _this.paymentviewmodel = data; }, function (error) { return console.log(error); });
+            .subscribe(function (data) { return _this.paymentviewmodel = data; }, function (err) {
+            if (err) {
+                alert("An Error has occured please try again after some time !");
+            }
+        });
     };
+    AllPaymentDetailsAdminComponent = __decorate([
+        core_1.Component({
+            templateUrl: 'app/Payment/AllPaymentDetailsAdmin.html',
+            providers: [PaymentAdmin_Service_1.PaymentAdminService]
+        }),
+        __metadata("design:paramtypes", [PaymentAdmin_Service_1.PaymentAdminService, ng2_progressbar_1.NgProgressService])
+    ], AllPaymentDetailsAdminComponent);
     return AllPaymentDetailsAdminComponent;
 }());
-AllPaymentDetailsAdminComponent = __decorate([
-    core_1.Component({
-        templateUrl: 'app/Payment/AllPaymentDetailsAdmin.html',
-        providers: [PaymentAdmin_Service_1.PaymentAdminService]
-    }),
-    __metadata("design:paramtypes", [PaymentAdmin_Service_1.PaymentAdminService, ng2_progressbar_1.NgProgressService])
-], AllPaymentDetailsAdminComponent);
 exports.AllPaymentDetailsAdminComponent = AllPaymentDetailsAdminComponent;
 //# sourceMappingURL=AllPaymentDetailsAdmin.Component.js.map

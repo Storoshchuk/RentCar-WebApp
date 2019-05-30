@@ -22,6 +22,7 @@ var BookingDetailedComponent = /** @class */ (function () {
         this._Route = _Route;
         this.route = route;
         this.bookingmodel = new BookingModel_1.BookingModel();
+        this.CarData = [];
         this.slctdCar = "";
         this.username = "";
         this.data = JSON.parse(localStorage.getItem('currentUser'));
@@ -87,7 +88,7 @@ var BookingDetailedComponent = /** @class */ (function () {
         formdata.D_address = this.bookingmodel.D_address;
         formdata.Email_Id = this.bookingmodel.Email_Id;
         formdata.Contact_No = this.bookingmodel.Contact_No;
-        formdata.C_Id = this.selectedCar;
+        formdata.C_Id = +this.param;
         formdata.Amount = 0;
         formdata.Username = this.username;
         this._bookingservice.Book(formdata).subscribe(function (data) {

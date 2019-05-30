@@ -1,56 +1,53 @@
 ﻿
 
-    <div class="container">
-        <nav class='navbar navbar-inverse'>
-            <div class='container-fluid'>
-                <ul class='nav navbar-nav'>
-                    <li><a [routerLink]="['/AdminDashboard']">Home</a></li>
-                    <li><a [routerLink]="['/AdminLogout']">Вийти</a></li>
-                </ul>
-            </div>
-        </nav>
-
-
-        <div class='panel-body'>
-           
-
-
-            <div class='table-responsive'>
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>Модель</th>
-                            <th>Бренд</th>
-                            <th>Колір</th>
-                            <th>Місць</th>
-                            <th>Ціна</th>
-                            <th>Тип палива</th>
-                            <th>Коробка передач</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor='let CarDetails of CarData'>
-                            <td>{{CarDetails.Model_Name}}</td>
-                            <td>{{CarDetails.Brand}}</td>
-                            <td>{{CarDetails.Color}}</td>
-                            <td>{{CarDetails.No_of_Pas}}</td>
-                            <td>{{CarDetails.Price}}</td>
-                            <td>{{CarDetails.Fueltype}}</td>
-                            <td>Механіка</td>
-                            <td><img alt="" height="150px" [src]="CarDetails.Image" /></td>
-                            <td>
-                                <a class="btn btn-success" [routerLink]="['/EditCar', CarDetails.C_Id]">Змінити</a>
-                                <a class="btn btn-danger" (click)="deleteCar(CarDetails.C_Id)">Видалити</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-
+<div class="container">
+    <nav class='navbar navbar-inverse'>
+        <div class='container-fluid'>
+            <div style="margin-top: 10px;">
+                <a style="color: darkgrey;" [routerLink]="['/AdminDashboard']">Home</a>
+                <p style="float: right; display: inline-flex; margin-left: 15px"><a style="color: darkgrey;" [routerLink]="['/AdminLogout']">Вийти</a></p>
             </div>
         </div>
+    </nav>
+
+
+    <div class='panel-body'>
+        <div class='table-responsive'>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Модель</th>
+                        <th>Бренд</th>
+                        <th>Колір</th>
+                        <th>Місць</th>
+                        <th>Ціна</th>
+                        <th>Тип палива</th>
+                        <th>Коробка передач</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let CarDetails of CarData'>
+                        <td>{{CarDetails.Model_Name}}</td>
+                        <td>{{CarDetails.Brand}}</td>
+                        <td>{{CarDetails.Color}}</td>
+                        <td>{{CarDetails.No_of_Pas}}</td>
+                        <td>{{CarDetails.Price}}</td>
+                        <td>{{CarDetails.Fueltype}}</td>
+                        <td>Механіка</td>
+                        <td><img alt="" height="150px" [src]="CarDetails.Image" /></td>
+                        <td>
+                            <a class="btn btn-success" [routerLink]="['/EditCar', CarDetails.C_Id]">Змінити</a>
+                            <a class="btn btn-danger" (click)="deleteCar(CarDetails.C_Id)">Видалити</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </div>
     </div>
+</div>
 <!--</body>
 </html>-->
